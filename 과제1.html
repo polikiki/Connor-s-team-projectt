@@ -173,26 +173,89 @@
         }
         .main4 {
             width: 100%;
-            height: 750px;
+            height: 800px;
             display: flex;
             align-content: center;
             justify-content: center;
+            position: relative;
         }
         .individual {
             text-align: center;
         }
-        .individual.pic {
+        .picky {
+            width: 518px;
+            height: 488px;
+            display: inline-block;
+            padding: 30px;
+            margin-right: 40px;
+            margin-left: -60px;
         }
-        .individual img{
-            width: 300px;
-            height: 300px;
+        .picky img {
+            width: 100%;
+            height: 100%;
         }
-
-
+        .individual p {
+            width: 740px;
+            margin: 30px auto 0;
+            
+        }
+        h6 {
+            width: 740px;
+            font-weight: 400;
+            font-size: 2.25rem;
+            margin: 20px auto 0;
+        }
+        .c-bar {
+            position: absolute;
+            bottom: 430px;
+            background-color: #f1c50e;
+            width: 100%;
+            height: 250px;
+            z-index: -1;
+        }
+        .readmore {
+            border: 1px solid black;
+            background-color: black;          
+            margin: 30px auto 60px;
+            width: 170px;
+            padding: 10px;
+    
+        }
+        .readmore a {
+            letter-spacing: 1px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            color: white;
+        }
+        .main5 {
+            width: 100%;
+            height: 700px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .apic {
+            width: 400px;
+            height: 481px;
+            display: inline-block;
+        }
+        .apic img {
+            width: 100%;
+            height: 100%;
+        }
+        .apic.comment {
+            padding: 20px;
+            border: 6px solid black;
+            text-align: center;
+        }
+        .apic.comment h2 {
+            font-size: 2.25rem;
+            margin: 50px auto 0;
+        }
     </style>
 </head>
 <body>
-    <div class="header">
+    <div class="header" id="tallest">
         <div class="top">
             <div class="int">
                 <img class="food" src="https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/9b22e6f1444b5ae785f3a267/pexelsphoto3326103.jpeg">
@@ -245,12 +308,28 @@
     </div>
     <div class="main4">
         <div class="individual">
-            <img src="https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/b997f5453a025796b7e011f6/pexelsphoto3659862.jpeg">
-            <img src="https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/89f0b40da8d05b4088f24d63/pexelsphoto704569.jpeg">
+            <div class="picky"><img src="https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/b997f5453a025796b7e011f6/pexelsphoto3659862.jpeg"></div>
+            <div class="picky"><img src="https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/89f0b40da8d05b4088f24d63/pexelsphoto704569.jpeg"></div>
             <h6>Which is the tastiest food?</h6>
             <p>The world's most delicious food is not Massaman curry, as we suggested, but a meaty, spicy, gingery dish from west Sumatra. "There is no love sincerer than the love of food," George Bernard Shaw said. Judging by the number of amazing dishes out there, he was right.
-
             </p>
+            <div class="readmore"><a href="#tallest">READ MORE</a></div>
+        </div>
+        <div class="c-bar"></div>
+    </div>
+    <div class="main5">
+        <div class="apic">
+            <img src="https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/e5a2d57a68bc5de4b52746a3/pexelsphoto3756523.jpeg">
+        </div>
+        <div class="apic comment">
+            <h2>Restaurant</h2>
+            <p>ORGANIC FARM</p>
+            <span>"</span>
+            <p>We bring the season's best mix of organic produce and hand-crafted farm products conveniently to your door by growing and partnering with local farms and artisans in your area.</p>
+            <h3>- LOO HUDSON</h3>
+        </div>
+        <div class="apic">
+            <img src="https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/fcee991985085d4093370a3d/pexelsphoto3756525.jpeg">
         </div>
     </div>
 </body>
