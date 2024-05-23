@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+    .wrapper {
+        /* border: 1px solid red; */
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        z-index: 1;
+        position: relative;
+    }
+    .wrapper .background {
+        /* border: 1px solid green; */
+        background-color: #6e52c7;
+        width: 750px;
+        height: 600px;
+        position: absolute;
+        left: 529px;
+        top: 80px;
+        z-index: 2;
+        margin: 0;
+    }
+    .wrapper .image {
+        /* border: 1px solid blue; */
+        width: 740px;
+        height: 673px;
+        position: absolute;
+        left: 50px;
+        top: 170px;
+        z-index: 3;
+    }
+    .wrapper .image img {
+        width: 100%;
+        height: 100%;
+    }
+    .contents {
+        /* border: 1px solid red; */
+        background-color: white;
+        width: 455px;
+        min-height: 471px;
+        text-align: right;
+        position: absolute;
+        top: 260px;
+        left: 650px;
+        z-index: 9999;
+        padding-right: 40px;
+    }
+    .c1 {
+        font-size: 1.25rem;
+        letter-spacing: 4px;
+        font-weight: 700;
+        color: #6e52c7;
+        margin-top: 60px;
+
+    }
+    .c2 {
+        font-size: 4.5rem;
+        font-weight: 700;
+        color: #6e52c7;
+        margin-top: 16px;
+
+    }
+    .c3 {
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: #6e52c7;
+        margin-top: 5px;
+    }
+    a {
+        color: #6e52c7;
+    }
+
+    body {margin: 0;}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="background"></div>
+        <div class="image"><img src="https://images03.nicepage.com/c461c07a441a5d220e8feb1a/e1900cdaa5c15cecae8746b6/rtyy-min.jpg"></div>
+        <div class="contents">
+            <div class="c1">ABOUT US<br></div>
+            <div class="c2">Fashion Trends<br> 2021</div>
+            <div class="c3">image from <a href="#">Freepik</a></div>
+        </div>
+    </div>
+</body>
+</html>

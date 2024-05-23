@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+        }
+        .header {
+            margin: auto;
+            width: 100%;
+            height: 750px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .bar {
+            position: absolute;
+            width: 100%;
+            top: 15px;
+            left: 0;
+        }
+        .search {
+            opacity: 50%;
+        }
+        .top {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .food {
+            position: absolute;
+            width: 100%;
+            height: 750px;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .ch {
+            position: absolute;
+            bottom: 250px;
+            background-color: white;
+            width: 411px;
+            height: 60px;
+        }
+        .your {
+            margin-top: 7px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 0;
+            font-size: 2rem;
+        }
+        .ch1 {
+            position: absolute;
+            bottom: 200px;
+            background-color: rgba(255, 217, 0, 0.877);
+            width: 302px;
+            height: 60px;
+        }
+        .make {
+            margin-top: 7px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 0;
+            font-size: 2rem;
+        }
+        .main1 {
+            margin: auto;
+            width: 100%;
+            height: 750px;
+            position: relative;
+        }
+        .centerbox {
+            width: 550px;
+            height: 629px;
+            background-color: #f1c50e;
+            /* 질문거리: 왜 그냥 마진오토 0은 가운데 정렬이 안될까? */
+            margin: 60px auto 0;
+            z-index: -1;
+        }
+
+        .menu_int {
+            width: 368px;
+            height: 281px;
+            border: 5px solid black;
+            position: absolute;
+            left: 10%;
+            bottom: 35%;
+            padding: 30px;
+            text-align: left;
+            background-color: white;
+        }
+
+        .h3 {
+            font-weight: 400;
+            font-size: 2.25rem;
+            margin: 18px auto 0 0;
+            line-height: 1.1;
+        }
+        .all {
+            margin: 21px auto 0 0;
+        }
+        .manu_pic {
+            width: 380px;
+            height: 506px;
+            position: absolute;
+            right: 10%;
+            bottom: 25%;
+        }
+        .pic {
+            width: 100%;
+            height: 100%;
+        }
+        .main2 {
+            width: 100%;
+            height: 430px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .card {
+            width: 296px;
+            height: 311px;
+            display: inline-block;
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+        }
+        .card.text {
+            padding: 20px;
+            border: 6px solid black;
+        }
+        h3 {
+            font-weight: 400;
+            font-size: 1.5rem;
+        }
+        h4 {
+            font-weight: 400;
+            font-size: 1.5rem;
+        }
+        .text p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .main3 {
+            background-image: url("https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/992eb4a786e9521ea39ea995/pexelsphoto940302.jpeg");
+            background-position: center;
+            background-size: cover;
+            height:750px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        h5 {
+            font-weight: 400;
+            font-size: 2.25rem;
+            margin-bottom: 20px;
+
+        }
+        .main3 q {
+            word-wrap: break-word;
+            font-size: 1rem;
+            line-height: 1.6;
+            display: inline-block;
+            margin: 0px 500px 250px 0;
+        }
+        .main4 {
+            width: 100%;
+            height: 750px;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+        .individual {
+            text-align: center;
+        }
+        .picky {
+            width: 518px;
+            height: 488px;
+            display: inline-block;
+            padding: 30px;
+            margin-right: 40px;
+            margin-left: -60px;
+        }
+        .picky img {
+            width: 100%;
+            height: 100%;
+        }
+        .individual p {
+            width: 740px;
+            margin: 30px auto 0;
+            
+        }
+        h6 {
+            width: 740px;
+            font-weight: 400;
+            font-size: 2.25rem;
+            margin: 20px auto 0;
+        }
+        .c-bar {
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="top">
+            <div class="int">
+                <img class="food" src="https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/9b22e6f1444b5ae785f3a267/pexelsphoto3326103.jpeg">
+                    <input class="search" type="search" value="Search 🔍">
+                <hr>
+                <div class="ch">
+                    <h1 class="your">
+                        YOUR FAVORITE FOOD
+                    </h1>
+                </div>
+                <div class="ch1">
+                    <h2 class="make">
+                        MAKE IT GOOD
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main1">
+        <div class="centerbox"></div>
+        <div class="menu_int">
+            <h3 class="cafe">Cafe Food Menu</h3>
+            <p class="all">All of our food is prepared by our team of trained kitchen staff from the sealed glass kitchen where you can see your food being made, without risk of little paws getting involved.</p>
+        </div>
+        <div class="manu_pic">
+            <img class="pic" src="https://images03.nicepage.com/c461c07a441a5d220e8feb1a/e07fd7349a87546e950fb324/photo1564305564045c62d40dd0123.jpg">
+        </div>
+    </div>
+    <div class="main2">
+        <div class="card pic">
+            <img src="https://images01.nicepage.com/a2/fc/a2fc4ef890f44fa0a9bb7787ce17008d.jpeg">
+        </div>
+        <div class="card text">
+            <h4>Have a healthy afternoon snack</h4>
+            <p>The majority of people in the working world are likely familiar with the mid-afternoon slump.</p>
+        </div>
+        <div class="card pic">
+            <img src="https://images01.nicepage.com/62/43/6243854162c536333ab218a58996077f.jpeg">
+        </div>
+        <div class="card text">
+            <h4>Include lots of fibre in your diet</h4>
+            <p>Fibre is known to help aid with digestion. However, that's not its only benefit.</p>
+        </div>
+    </div>
+    <div class="main3">
+        <div class="title">
+        <h5>Time to Make a Difference</h5>
+        <q>Phasellus scelerisque arcu vestibulum tempor tempor. Donec vulputate leo et metus hendrerit bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. In scelerisque nisl nec ornare euismod.</q>  
+        </div>
+    </div>
+    <div class="main4">
+        <div class="individual">
+            <div class="picky"><img src="https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/b997f5453a025796b7e011f6/pexelsphoto3659862.jpeg"></div>
+            <div class="picky"><img src="https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/89f0b40da8d05b4088f24d63/pexelsphoto704569.jpeg"></div>
+            <h6>Which is the tastiest food?</h6>
+            <p>The world's most delicious food is not Massaman curry, as we suggested, but a meaty, spicy, gingery dish from west Sumatra. "There is no love sincerer than the love of food," George Bernard Shaw said. Judging by the number of amazing dishes out there, he was right.
+            </p>
+        </div>
+        <div class="c-bar"></div>
+    </div>
+</body>
+</html>

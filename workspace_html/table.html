@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--
+        td나 th에 표현할 내용을 적는다
+        td나 th는 tr의 자식요소여야 한다
+        tr은 table의 자식요소여야 한다
+    -->
+    <!--
+        colspan, rowspan 할때
+        원본을 먼저 코딩하고
+        합쳐질 것들 중 첫번째 칸에 속성를 넣고
+        필요 없어진 코드를 지운다
+    -->
+    <table border="1">
+        <tr>
+            <th>제목1</th>
+            <th colspan="2">제목2</th>
+            <!-- <th>제목3</th> -->
+        </tr>
+        <tr>
+            <td rowspan="2">제목보다 긴 글씨 1</td>
+            <td>제목보다 긴 글씨 2</td>
+            <td>제목보다 긴 글씨 3</td>
+        </tr>
+        <tr>
+            <!-- <td>제목보다 긴 글씨</td> -->
+            <td>제목보다 긴 글씨</td>
+            <td>제목보다 긴 글씨</td>
+        </tr>
+    </table>
+
+    <table border="1">
+        <caption>caption 테이블의 설명</caption>
+        <!-- summary 어떤 제목들로 이루어져 있는가 -->
+        <summary>제목1, 제목2</summary>
+        <thead> <!--thead tbody는 코드를 정리하기 편하게 하는 용도 떨어져 있는 테이블에는 쓸 필요가 없음  -->
+            <tr>
+                <td>제목1</td>
+                <td>제목2</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>내용1</td>
+                <td>내용2</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table border="1">
+        <tr>
+            <td>왼쪽칸</td>
+            <td>
+
+                <table border="1">
+                    <thead> <!--thead tbody는 코드를 정리하기 편하게 하는 용도 떨어져 있는 테이블에는 쓸 필요가 없음  -->
+                        <tr>
+                            <td>제목1</td>
+                            <td>제목2</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>내용1</td>
+                            <td>내용2</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+
+<table>
+    <tbody>
+        <tr>
+            <td>
+                <img src="https://image-comic.pstatic.net/webtoon/812354/thumbnail/thumbnail_IMAG21_.jpg"
+                    alt="신혼일기 표지 이미지"
+                    onerror="this.src=
+                    'https://image-comic.pstatic.net/webtoon/808198/thumbnail/thumbnail_IMAG21_2aabb538-5b1a-4d74-81ed-b41bb8a155ff.jpg'"
+                    width="200"
+                    height="100"
+                    >
+            </td>
+            <td>
+                <strong>신혼일기</strong><br>
+                자까
+            </td>
+        </tr>
+        <tr>
+            <td><img src="https://image-comic.pstatic.net/webtoon/808198/thumbnail/thumbnail_IMAG21_2aabb538-5b1a-4d74-81ed-b41bb8a155ff.jpg" alt="촉법소년이미지"></td>
+            <td>
+                <strong>촉법소년</strong><br>
+                박만사, 남자의 이야기 / 정종택
+            </td>
+        </tr>
+        <tr>
+            <td><img src=https://image-comic.pstatic.net/webtoon/747271/thumbnail/thumbnail_IMAG21_75c6a3cc-c4d1-4b51-a945-029aff772a63.jpg alt=""></td>
+            <td>
+                <strong>나노마신</strong><br>
+                현절무 / 금강불괴 / 한중월야
+            </td>
+        </tr>
+        <tr>
+            <td><img src=https://image-comic.pstatic.net/webtoon/822640/thumbnail/thumbnail_IMAG21_56a8443c-14b8-47a6-8806-ae90f935cd85.jpg alt=""></td>
+            <td>
+                <strong>소꿉친구 컴플렉스</strong><br>
+                은하이
+            </td>
+        </tr>
+        <tr>
+            <td><img src=https://image-comic.pstatic.net/webtoon/762279/thumbnail/thumbnail_IMAG21_715e8b9b-f6e7-48fc-af26-88fdf50ff7c5.jpg alt=""></td>
+            <td>
+                <strong>정글쥬스</strong><br>
+                형은 / 쥬더
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+
+</html>
