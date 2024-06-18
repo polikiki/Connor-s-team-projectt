@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+
+    <script>
+        let lotto = [];
+        
+    //     // 첫번째 뽑기
+    //     let tmp = parseInt(Math.random() * 45) + 1;
+    //     console.log('tmp0',tmp)
+    //     lotto.push(tmp);
+    //     console.log(lotto)
+
+    //     // 두번째 뽑기
+    //    do{
+    //     tmp = parseInt(Math.random() * 45) + 1;
+    //     console.log('tmp1',tmp)
+    //    }while(lotto[0] == tmp);
+    //    lotto.push(tmp);
+    //    console.log(lotto)
+
+    //    // 3번째 뽑기
+    //    do{
+    //     tmp = parseInt(Math.random() * 45) + 1;
+    //     console.log('tmp2',tmp)
+    //    }while(lotto[0] == tmp || lotto[1] == tmp);
+    //    lotto.push(tmp);
+    //    console.log(lotto);
+
+       lotto = [];
+    //    while(lotto.length != 6){
+    //     let tmp = parseInt(Math.random() * 45) + 1;
+    //     console.log('tmp',tmp);
+        
+    //     let isDup;
+    //     for(let i =0; i<lotto.lengthl; i++) {
+    //         if(lotto[i] == tmp){
+    //             isDup = true;
+    //             break;
+    //         }
+    //     }
+
+    //     if(!isDup) {
+    //         lotto.push(tmp);
+    //     }
+
+    //     } while(isDup);
+    //     console.log(lotto);
+
+    while(lotto.length != 6){
+
+        let isDup;
+        do {
+            isDup = false;
+            let tmp = parseInt(Math.random() * 45) + 1;
+            console.log('tmp', tmp);
+
+            // 이거 대신 배열의 indexOf 사용해도 됨
+            for(let i=0; i<lotto.length; i++){
+                if(lotto[i] == tmp){
+                    isDup = true;
+                    break;
+                }
+            }
+
+            if(!isDup){
+                lotto.push(tmp);
+            }
+        }while(isDup)
+        console.log(lotto)
+    }
+
+        // 지정한 자리를 제외하고 자동뽑기
+        // 예를들어 첫번째 6, 두전째 8, 고정하고 나머지 자동선택
+        // 예를들어 두번째 5, 네번째 30, 다섯번째 35 고정하고 나머지 자동선택
+
+        // Q&A
+
+       
+        // tmp = parseInt(Math.random() * 45) + 1;
+        // if(lotto[0] = tmp) {
+        //     tmp = parseInt(Math.random() * 45) + 1;
+        //     if(lotto[0] = tmp) {
+        //     tmp = parseInt(Math.random() * 45) + 1;
+        // }
+            
+    </script>
+
+</body>
+</html>

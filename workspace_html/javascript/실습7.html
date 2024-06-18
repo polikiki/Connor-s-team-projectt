@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #game {
+            border: 1px solid red;
+            width: 500px;
+            height: 500px;
+
+            position: relative;
+        }
+        #game #char {
+            width: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id = "game">
+    <img id="char" src="https://i.giphy.com/MGqYLloqVU93ndrFmT.webp">
+    </div>
+    <script>
+        game ();
+        function game(){
+            let top = 0;
+            let left = 0;
+            document.querySelector("body").addEventListener("keyup", function(event){
+                console.log(event.keyCode)
+                // up : 38
+                // right : 39
+                // down : 40
+                // left : 37
+            
+            if(event.keyCode == 39) { // 오른쪽 방향키
+                left += 50;
+                document.querySelector("#char").style.left = left+"px";
+            } else if(event.keyCode == 37) { // 왼쪽 방향키
+                left += 50;
+                document.querySelector("#char").style.left = left+"px";
+            } else if(event.keyCode == 38) { // 위쪽 방향키
+                top += 50;
+                document.querySelector("#char").style.left = top+"px";
+            } else if(event.keyCode == 40) { //  아래쪽 방향키
+                top += 50;
+                document.querySelector("#char").style.left = top+"px";
+            } 
+
+            for(let i=0; i<50; i+=1) {
+                setTimeout(function(){
+                    document.querySelector('#char').style.left = 10*i+'px';
+                }, 100*i)
+            }
+        })
+        }
+    </script>
+</body>
+</html>

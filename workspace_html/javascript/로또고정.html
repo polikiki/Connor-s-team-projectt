@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ball {
+            float: left;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            font-size: 28px;
+            border-radius: 100%;
+            text-align: center;
+            vertical-align: middle;
+            color: #fff;
+            font-weight: 500;
+            text-shadow: 0px 0px 3px rgba(73, 57, 0, .8);
+            margin-right: 6px;
+        }
+
+        .ball0 {
+            background: #fbc400;
+        }
+
+        .ball1 {
+            background: #69c8f2;
+        }
+
+        .ball2 {
+            background: #ff7272;
+        }
+
+        .ball3 {
+            background: #aaa;
+        }
+
+        .ball4 {
+            background: #b0d840;
+        }
+
+        .ball5 {
+            background: #c7c7c7;
+        }
+    </style>
+</head>
+
+<body>
+    <div id=result>추첨 결과는?</div><br>
+    <script>
+        let lotto = [];
+        lotto = [];
+        while (lotto.length != 6) {
+
+            let isDup;
+            do {
+                isDup = false;
+                let tmp = parseInt(Math.random() * 45) + 1;
+                console.log('tmp', tmp);
+
+                for (let i = 0; i < lotto.length; i++) {
+                    if (lotto[i] == tmp) {
+                        isDup = true;
+                        break;
+                    }
+                }
+
+                if (!isDup) {
+                    lotto.push(tmp);
+                }
+            } while (isDup)
+            console.log(lotto)
+        }
+        
+        let d = document.body;
+        for(let i =0; i<lotto.length; i++){
+            
+            let div = document.createElement('div');
+            div.classList.add('ball');
+            div.classList.add(`ball${i}`);
+            div.textContent = lotto[i];
+            d.appendChild(div);
+        } 
+        
+    </script>
+</body>
+
+</html>

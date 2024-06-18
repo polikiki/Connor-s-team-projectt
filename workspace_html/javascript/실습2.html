@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color:  green;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .pink  {
+            background-color: pink;
+        } */
+
+        #color {
+            border: 1px solid red;
+            width: 300px;
+            height: 100px;
+        }
+        .red {
+            background-color: red;
+        }
+        .green {
+            background-color: green;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .pick {
+            background-color: pick;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id = "main">
+
+    </div>
+
+    <div>
+        <input type="button" value="change" class="red">빨강
+        <input type="button" value="change" class ="green">초록
+        <input type="button" value="change" class = "blue">파랑
+        <input type="button" value="change" class="pink">핑쿠
+
+    </div>
+    
+    <script>
+        
+        pick ();
+        
+        let a = document.querySelector('.red')
+        a.addEventListener('click', function(){
+            
+        })
+    </script> -->
+
+    <div>
+        <h2>실습3</h2>
+        <div id ="color">
+        </div>
+        <div id = "a">
+            <button type="button"></button>
+                
+        </div>
+    </div>
+    <script>
+        function pcikket() {
+            document.querySelector('#빨강').addEventListener("click", function(){
+                let color = document.querySelector("#color");
+                color.classList.add("red");
+            })
+            document.querySelector('#초록').addEventListener("click", function(){
+                let color = document.querySelector("#color");
+
+                // 클래스 삭제
+                color.classList.remove("red");
+                color.classList.remove("green");
+                color.classList.remove("blue");
+                color.classList.remove("pink");
+                
+                // 클래스 추가
+                color.classList.add("green");
+            })
+        }
+    </script>
+</html>

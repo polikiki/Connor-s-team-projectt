@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #img_main {
+            width: 300px;
+        }
+        #a {
+            display: flex;
+            width: 300px;
+        }
+        #a img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id ="image">
+        <img src="">
+    </div>
+
+    <div>
+        <img id="one" style="width: 30px; height: 30px;" src="https://item.kakaocdn.net/do/d2a0a7643a2133762001a4c50e588db68f324a0b9c48f77dbce3a43bd11ce785" >
+        <img id = "two" style="width: 30px; height: 30px;" src="https://img.freepik.com/free-photo/cute-ai-generated-cartoon-bunny_23-2150288883.jpg">
+        <img  id = "three"style="width: 30px; height: 30px;" src="https://img.freepik.com/free-photo/cartoon-style-summer-scene-with-cute-animals_23-2151068429.jpg?size=626&ext=jpg&ga=GA1.1.1788614524.1718409600&semt=ais_user">
+    </div>
+
+    <script>
+        let a = document.querySelector('#image');
+        let b = document.querySelector('#one');
+        let c = document.querySelector('#two');
+        let d = document.querySelector('#three');
+        a.addEventListener('click',function(event){
+            let e = event.target.clcik
+                console.log(e.getAttribute('src'));
+                image = e.getAttribute('src');
+                
+        })
+    </script> -->
+
+    <div>
+        <h2>실습2</h2>
+        <div>
+            <div><img id = "img_main" src =""></div>
+        </div>
+        <div id = "a">
+            <div>
+                <img  src="https://item.kakaocdn.net/do/d2a0a7643a2133762001a4c50e588db68f324a0b9c48f77dbce3a43bd11ce785" >
+            </div>
+            <div>
+                <img src="https://img.freepik.com/free-photo/cute-ai-generated-cartoon-bunny_23-2150288883.jpg" >
+            </div>
+            <div>
+                <img src="https://img.freepik.com/free-photo/cartoon-style-summer-scene-with-cute-animals_23-2151068429.jpg?size=626&ext=jpg&ga=GA1.1.1788614524.1718409600&semt=ais_user" >
+            </div>
+        </div>
+    </div>
+
+    <script>
+        thumb() ;
+        function thumb(){
+            document.querySelector("#a").addEventListener('click',function(event){
+                //console.log(event.target);
+                //console.log(event.target.getAttribute("src"));
+               let img_main = document.querySelector("#img_main");
+               img_main.setAttribute('src', event.target.getAttribute("src"));
+            })
+        }
+        
+    </script>
+</body>
+</html>

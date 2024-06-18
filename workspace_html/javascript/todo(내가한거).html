@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id = 1>
+    <title>할일 목록</title>
+    <input type="text" value="" id = "rest"> <button type="button" id ="add">추가</button>
+    <br><br>
+    <input type="checkbox" value ="" id="all" > 전체선택 &nbsp;
+    <button type="button">선택삭제</button>
+    <br><br>
+    <div id="console" ></div>
+<script>
+    
+    let add = document.querySelector("#add")
+    add.addEventListener('click', function(){
+        let text = document.querySelector("#rest").value;
+        if(text == "점심정하기") {
+            document.querySelector("#console").innerHTML += '<div><input type="checkbox" value="launch"> 점심정하기 &nbsp; <button type="button" class ="del">삭제</button><br></div>';
+        }else if(text == "실습하기") {
+            document.querySelector("#console").innerHTML += '<div><input type="checkbox" value="practice"> 실습하기 &nbsp; <button type="button" class ="del">삭제</button><br></div>';
+        }else if (text == "쉬기") {
+             document.querySelector("#console").innerHTML += '<div><input type="checkbox" value="rest"> 쉬기 &nbsp; <button type="button" class ="del">삭제</button></div>';
+        }
+
+        let dels = document.querySelectorAll('#console .del')
+
+        for(let i = 0; i< dels.length;i++) {
+            dels[i].addEventListener('click', function(event){
+                console.log(event.target)
+                event.target.parentNode.remove();
+            })
+        }
+
+        // let all = document.querySelector(#)
+        
+    })
+</script>
+
+</body>
+</html>

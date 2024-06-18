@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cursor {
+            width: 30px;
+            height: 30px;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            display: none;
+        }
+
+        #catTower {
+            border: 1px solid red;
+            width: 300px;
+            height: 300px;
+            margin: 50px;
+        }
+    </style>
+    <script>
+        function btn2click() {
+            document.querySelector("#console").innerHTML = '버튼2 클릭<br>';
+        }
+
+        // let btn1 = document.querySelector("#btn1");
+        // console.log('btn1 :', btn1);
+
+        // javascript를 head영역에서 쓸 수 있게 하는 방법
+        // window : 브라우저를 뜻함
+        // window.addEventListener("load", function(){
+        //     let let btn1 = document.querySelector("#btn1");
+        //     console.log('btn1 :', btn1);
+        // })
+        window.onload = function () {
+            let btn1 = document.querySelector("#btn1");
+            console.log('btn1 :', btn1);
+
+            btn1.onclick = function () {
+                console.log('버튼1 클릭');
+                document.querySelector("#console").innerHTML = '버튼1 클릭<br>';
+            }
+            // onclick은 click 이벤트가 발행했을때 실행할 함수를 가지고 있는
+            // "변수"라서 딱 하나의 함수만 지정할 수 있다.
+            btn1.onclick = function () {
+                document.querySelector("#console").innerHTML = '버튼1 클릭 클릭<br>';
+            }
+            let btn3 = document.querySelector("#btn3");
+            // addEventListener
+            // 첫번째 전달인자 : 이벤트 종류
+            // 두번째 전잘인자 : 실행할 함수
+            btn3.addEventListener('click', function () {
+                document.querySelector("#console").innerHTML = '버튼3 클릭<br>';
+            });
+
+            function btn3click() {
+                document.querySelector("#console").innerHTML += '버튼3 클릭 클릭 클릭<br>';
+            }
+            // 여러번 추가할 수 있음. 모두 동작함 
+            btn3.addEventListener('click', btn3click);
+            // 해당 이벤트 제거
+            // 단, 익명함수였다면 제거 불가능
+            btn3.removeEventListener('click', btn3click);
+
+            window.addEventListener('scroll', function () {
+                console.log('스크롤 변경')
+                console.log(document.documentElement.scrollTop)
+            })
+
+            // let id = document.querySelector("#id");
+            // id.addEventListener("keydown", function(){
+            //     console.log("keydown")
+            // })
+            id.addEventListener('keyup', function (event) {
+                console.log('keyup', event.keyCode);
+                //엔터키
+                if (event.keyCode == 13) {
+                    document.querySelector("#pw").focus();
+                }
+            });
+
+            document.querySelector("#pw")
+                .addEventListener('keyup', function (event) {
+                    console.log('keyup', event.keyCode);
+                    //엔터키
+                    if (event.keyCode == 13) {
+                        document.querySelector("#login").click();
+                    }
+                });
+            document.querySelector("#login")
+                .addEventListener('click', function (event) {
+                    console.log('로그인 버튼 클릭');
+                    let text = document.querySelector("#id").vlaue;
+                    console.log("아이디 :", text);
+                    document.querySelector("#id").value = "admin";
+                });
+
+
+            /*
+                로그인 버튼을 눌렀을때
+                id는 admin
+                password 1234
+                인 경우 "로그인 되었습니다"
+                그외에는 "아이디 또는 비밀번호를 확인하세요" 출력
+
+                id, password가 아무것도 안 적힌 경우 "..는 필수입니다" 출력
+            */
+
+            document.querySelector("#login").addEventListener('click', function (event) {
+                console.log('로그인 버튼 클릭');
+                // let a = document.querySelector("#id").value;
+                // console.log("아이디 :",a)
+                // let b = document.querySelector("#pw").value;
+                // console.log("비번 :",b)
+                // if(a == "admin" && b == "1234") {
+                //     console.log("로그인 되었습니다")
+                // } else if(a == ""|| b == "") {
+                //     console.log("..는 필수입니다")
+                // } else{
+                //     console.log("아이디 또는 비밀번호를 확인하세요")
+                // }
+
+                let id = document.querySelector("#id").value;
+                console.log("아이디 : ", id);
+                // document.querySelector("#id").value = "admin";
+                let pw = document.querySelector("#pw").value;
+                console.log("비번 : ", pw);
+
+                if (id == 'admin' && pw == '1234') {
+                    document.querySelector("#console").innerHTML = "로그인 성공";
+                } else {
+                    document.querySelector("#console").innerHTML = "아이디 또는 비밀번호를 확인해 주세요";
+                }
+
+                console.log('id == ""', id == "", id.trim().length)
+                if (id == "") {
+                    document.querySelector("#console").innerHTML += '<br>아뒤는 필수임'
+
+                    document.querySelector("#msg").innerText = "아뒤는 필수임";
+                    document.querySelector("#msg").style.display = 'block';
+                }
+                if (pw == "") {
+                    document.querySelector("#console").innerHTML += '<br>비번은 필수임'
+                }
+
+                document.querySelector("#console").innerHTML = id;
+
+            });
+
+            // id가 btn3인 dom(html 태그)를 가져와서 변수에 담기
+            let newBtn3 = document.querySelector("#btn3");
+            newBtn3.addEventListener('mouseover', function () {
+                console.log("마우스 들어옴")
+                newBtn3.style.fontSize = 20 + 'px';
+            });
+            newBtn3.addEventListener('mouseout', function () {
+                console.log("마우스 나감")
+                newBtn3.style.fontSize = 14 + 'px';
+            });
+
+            // 앞에 아무것도 안쓰면 브라우저 전체에 적용되는 이벤트
+            addEventListener('mousemove', function (evt) {
+                // console.log('마우스 움직임')
+            });
+
+            let catTower = document.querySelector('#catTower');
+            catTower.addEventListener('mousemove', function (evt) {
+                // console.log('마우스 움직임')
+                // 화면에 보이는 영역 기준 x,y
+                // 스크롤이 내려 왔더라도 그냥 지금 보이는 왼쪽 위 기준
+                // console.log(evt.x, evt.clientx)
+
+                // 스크롤에 관계없이 문서 좌상단 기준
+                // console.log(evt.pageX)
+
+                // 이벤트가 적용된 대상의 좌상단 기준
+                // console.log(evt.offsetX)
+
+                /*
+                    event.pageX를 left
+                    event.pageY를 top
+                    display를 보이게 해주기
+                */
+
+                document.querySelector("#cursor");
+                cursor.style.left = (evt.pageX + 15) + "px";
+                cursor.style.top = (evt.pageY + 15) + "px";
+                cursor.style.display = "block";
+
+            });
+
+            // 이벤트 명 : focus, blur
+            // #id에 적용해서
+            // "focus: 아이디에 포커스 맞춰짐"
+            // "blur: 아이디에 포커스 잃음"
+
+            let newId = document.querySelector('#id');
+            newId.addEventListener('focus', function (evr) {
+                console.log("'foucs :' 아이디에 포커스 맞춰짐")
+            });
+            newId.addEventListener('blur', function (evr) {
+                console.log("'blur :' 아이디에 포커스 잃음")
+            });
+
+            // this : 그냥 쓰일때는 window 객체를 가지고 있다
+            console.log(this);
+
+            document.querySelector('#parent')
+                .addEventListener('click', function (event) {
+
+                    // event.target : 이벤트가 발생된 DOM
+                    console.log('event.target :', event.target);
+
+                    // event.currnetTarget : 이벤트가 적용된 DOM
+                    console.log('event.currentTarget :', event.currentTarget);
+
+                    // this : 더이상 window가 아님
+                    // this === event.currentTarget
+                    console.log('this :', this);
+                });
+
+            document.querySelector('#child1')
+                .addEventListener('click', function (){
+                    
+                    // 부모로 전달되는 이벤트를 중지한다
+                    event.stopPropagation();
+                    
+                    console.log('자식 1 클릭')
+                });
+
+            // document.querySelector('#naver')
+            //     .addEventListener('click', function (event){
+            //         console.log('naver 클릭')
+            //     });
+
+            document.querySelector("#form")
+                .addEventListener('submit', function (event){
+
+                    // 원래 html 고유 기능을 없애줌
+                    event.preventDefault();
+
+                    let value = document.querySelector("#keyword").value
+                    console.log(value,value.length);
+                    if(value.length < 2){
+                        console. log('두글자 이상 입력')
+                    } else {
+                        console.log('naver 검색')
+
+                        document.querySelector("#form").submit();
+                    }
+                });
+
+
+                document.querySelector("#btn4").addEventListener("click",function(){
+                    let chks = document.querySelectorAll('.chk');
+                    // for(let i=0,i<배열.length; i++)
+                    // for(let index in 배열)
+                    // for(let item of 배열)
+                    // 배열. forEach(function(item){})
+
+                    // 3가지 for문 중에 of로 씀
+                    for(let dom of chks) {
+                        //dom = chks[0]
+                        //모든 요소 (프로퍼티 중에서) 체크 상태 점검
+                        if(dom.checked/* == true*/) {
+                        console.log(dom.value, dom.checked);
+                        }
+                    }
+
+                    // css 선택자를 이용해서 체크 된 것만 가져오기
+                    let chks2 = document.querySelectorAll('.chk:checked');
+                    console.log(chks2.length);
+                })
+
+                // 모든 삭제 버튼에 클릭 이벤트 적용
+                // 삭제 버튼에는 모두 classs del이 있음
+                let dels = document.querySelectorAll('.del')
+                
+                for(let i = 0; i<dels.length;i++){
+                    dels[i].addEventListener('click', function(event){
+                        console.log(event.target)
+
+                        event.target.parentNode.remove();
+                    })
+                }
+
+
+            }
+
+
+                    
+
+    </script>
+</head>
+
+<body style="height:2000px">
+    <button type="button" id="btn1">버튼1</button>
+    <!-- 별로 좋은 방법은 아님 이유는 자바 스크립트에 모여 있어야 수정이 편함 -->
+    <button type="button" id="btn2" onclick="btn2click()">버튼2</button>
+    <!-- 이 방법을 추천함 여러개를 관리하기가 편함 -->
+    <button type="button" id="btn3">버튼3</button>
+
+    <div>
+        아이디 : <input type="text" id="id"><br>
+        비밀번호 : <input type="text" id="pw"><br>
+        <br>
+        <div></div>
+        <!-- <input type="button" id="login" value="로그인"> -->
+        <div id="msg" style="display: none; color: red;"></div>
+        <input type="button" id="login" value="로그인">
+    </div>
+
+    <div id="console"></div>
+
+    <img id="cursor"
+        src="https://cdn.discordapp.com/attachments/1237222207395205138/1250271715414773780/image.png?ex=666a55c5&is=66690445&hm=db0a7d03382cf6c77bf7b73d4ebf377622d4bdcb293fa8f51512be88965cb450&">
+    <div id="catTower">
+
+    </div>
+
+    <div id="parent">
+        부모
+        <div id="child1"> 자식 1</div>
+        <div id="child2"> 자식 2</div>
+    </div>
+    <form id="form" action="http://search.naver.com/search.naver">
+        <input id="keyword" type="text" name="query">
+        <input type="submit" value="네이버검색">
+    </form>
+    <input type="button"id= "btn4" value="토핑확인"><br>
+    <input type ="checkbox" class ="chk" value="udon">우동사리<br>
+    <input type ="checkbox" class ="chk" value="cake">떡<br>
+    
+    <!--label 쓰는 첫번째 방법 -->
+    <!-- 인라인 블럭 사이에 블럭요소를 넣는 경우는 대부분 이상하게 나온다 ex) labe 안에 div -->
+    <label><input type ="checkbox" class ="chk" value="china">중국당면</label><br>
+
+    <!--label 쓰는 두번째 방법 -->
+    <input type ="checkbox" id = "bun" class ="chk" value="china">
+    <label for="bun">분모자</label>
+
+    <div>
+        <span>우동사리</span> <button type="button" class="del">삭제1</button>
+    </div>
+    <div>
+        <span>떡</span> <button type="button" class="del">삭제2</button>
+    </div>
+    <div>
+        <span>중국당면</span> <button type="button" class="del">삭제3</button>
+    </div>
+
+
+
+  
+</body>
+
+</html>
