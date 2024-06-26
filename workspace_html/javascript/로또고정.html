@@ -48,42 +48,142 @@
 </head>
 
 <body>
-    <div id=result>추첨 결과는?</div><br>
+    <div id="result">추첨 결과는?</div>
+    <!-- <div id="checkbox">
+        <input type="checkbox" class="num" value="1">1
+        <input type="checkbox" class="num" value="2">2
+        <input type="checkbox" class="num" value="3">3
+        <input type="checkbox" class="num" value="4">4
+        <input type="checkbox" class="num" value="5">5
+        <input type="checkbox" class="num" value="6">6
+        <input type="checkbox" class="num" value="7">7
+        <input type="checkbox" class="num" value="8">8
+        <input type="checkbox" class="num" value="9">9 <br>
+        <input type="checkbox" class="num" value="10">10
+        <input type="checkbox" class="num" value="11">11
+        <input type="checkbox" class="num" value="12">12
+        <input type="checkbox" class="num" value="13">13
+        <input type="checkbox" class="num" value="14">14
+        <input type="checkbox" class="num" value="15">15
+        <input type="checkbox" class="num" value="16">16
+        <input type="checkbox" class="num" value="17">17
+        <input type="checkbox" class="num" value="18">18
+        <input type="checkbox" class="num" value="19">19 <br>
+        <input type="checkbox" class="num" value="20">20
+        <input type="checkbox" class="num" value="21">21
+        <input type="checkbox" class="num" value="22">22
+        <input type="checkbox" class="num" value="23">23
+        <input type="checkbox" class="num" value="24">24
+        <input type="checkbox" class="num" value="25">25
+        <input type="checkbox" class="num" value="26">26
+        <input type="checkbox" class="num" value="27">27
+        <input type="checkbox" class="num" value="28">28
+        <input type="checkbox" class="num" value="29">29 <br>
+        <input type="checkbox" class="num" value="30">30
+        <input type="checkbox" class="num" value="31">31
+        <input type="checkbox" class="num" value="32">32
+        <input type="checkbox" class="num" value="33">33
+        <input type="checkbox" class="num" value="34">34
+        <input type="checkbox" class="num" value="35">35
+        <input type="checkbox" class="num" value="36">36
+        <input type="checkbox" class="num" value="37">37
+        <input type="checkbox" class="num" value="38">38
+        <input type="checkbox" class="num" value="39">39 <br>
+        <input type="checkbox" class="num" value="40">40
+        <input type="checkbox" class="num" value="41">41
+        <input type="checkbox" class="num" value="42">42
+        <input type="checkbox" class="num" value="43">43
+        <input type="checkbox" class="num" value="44">44
+        <input type="checkbox" class="num" value="45">45 
+    </div>-->
+    <div id="checkbox">
+
+    </div>
+    <br>
+    <div>
+        <button type="button" id="button">로또번호 생성</button>
+
+    </div><br>
     <script>
         let lotto = [];
-        lotto = [];
-        while (lotto.length != 6) {
 
-            let isDup;
-            do {
-                isDup = false;
-                let tmp = parseInt(Math.random() * 45) + 1;
-                console.log('tmp', tmp);
+        for (let i = 1; i < 46; i++) {
+            // <span>
+            //     <input>
+            //     <span>7</span>
+            // </span>
+            let checkbox = document.createElement('span');
+            checkbox.innerHTML = '<input type="checkbox" class="num" value =' + i + '> <span>' + i + '</span>'
+            document.querySelector('#checkbox').append(checkbox);
 
-                for (let i = 0; i < lotto.length; i++) {
-                    if (lotto[i] == tmp) {
-                        isDup = true;
-                        break;
-                    }
-                }
-
-                if (!isDup) {
-                    lotto.push(tmp);
-                }
-            } while (isDup)
-            console.log(lotto)
         }
-        
-        let d = document.body;
-        for(let i =0; i<lotto.length; i++){
-            
-            let div = document.createElement('div');
-            div.classList.add('ball');
-            div.classList.add(`ball${i}`);
-            div.textContent = lotto[i];
-            d.appendChild(div);
-        } 
-        
+
+        document.querySelector('#button').addEventListener('click', function (event) {
+            let fixed = document.querySelectorAll('.num:checked');
+            // let a = (fixed[0].value)
+            // console.log(a);
+            if (fixed.length > 6) {
+                alert("숫자는 6자리를 넘을 수 없습니다")
+                let checkboxes = document.querySelectorAll('.num');
+                checkboxes.forEach(function (event) {
+                    event.checked = false;
+                })
+
+            } else {
+                lotto = [];
+                for (i = 0; i < fixed.length; i++) {
+                    let b = Number(fixed[i].value)
+                    // console.log(b)
+                    lotto.unshift(b)
+                    // console.log(lotto)
+                }
+                while (lotto.length < 6) {
+
+                    let isDup;
+                    do {
+                        isDup = false;
+                        let tmp = parseInt(Math.random() * 45) + 1;
+                        console.log('tmp', tmp);
+
+                        for (let i = 0; i < lotto.length; i++) {
+                            if (lotto[i] == tmp) {
+                                isDup = true;
+                                break;
+                            }
+                        }
+
+                        if (!isDup) {
+                            lotto.push(tmp);
+                            console.log('lotto 추가')
+                        }
+                    } while (isDup)
+                    console.log(lotto)
+                }
+                let d = document.body;
+                for (let i = 0; i < lotto.length; i++) {
+                    let div_ball = document.getElementById('div_ball')
+                    let div = document.createElement('div');
+                    div.classList.add('ball');
+                    div.classList.add(`ball${i}`);
+                    div.textContent = lotto[i];
+                    d.appendChild(div);
+                }
+            }
+        })
+
+
+
+        // let d = document.body;
+        // for (let i = 0; i < lotto.length; i++) {
+        //     let div_ball = document.getElementById('div_ball')
+        //     let div = document.createElement('div');
+        //     div.classList.add('ball');
+        //     div.classList.add(`ball${i}`);
+        //     div.textContent = lotto[i];
+        //     d.appendChild(div);
+        // }
+
+
     </script>
 </body>
 
