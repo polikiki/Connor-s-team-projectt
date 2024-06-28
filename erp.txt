@@ -1,0 +1,33 @@
+CREATE TABLE emp (
+	empno	number(4)	NOT NULL,
+	enmae	varchar2(10)	NOT NULL,
+	job	varchar2(9)	NOT NULL,
+	mgr	number(4)	NOT NULL,
+	hiredate	date	NOT NULL,
+	sal	number(7.2)	NOT NULL,
+	comm	number(7.2)	NOT NULL,
+	deptno	number(2)	NOT NULL,
+	deptno2	number(2)	NOT NULL
+);
+
+CREATE TABLE dept (
+	deptno	number(2)	NOT NULL,
+	dname	varchar2(14)	NOT NULL,
+	Field	varchar2(13)	NULL
+);
+
+ALTER TABLE emp ADD CONSTRAINT PK_EMP PRIMARY KEY (
+	empno
+);
+
+ALTER TABLE dept ADD CONSTRAINT PK_DEPT PRIMARY KEY (
+	deptno
+);
+
+ALTER TABLE emp ADD CONSTRAINT FK_dept_TO_emp_1 FOREIGN KEY (
+	deptno2
+)
+REFERENCES dept (
+	deptno
+);
+

@@ -730,7 +730,7 @@ order by e.empno;
 select * from emp;
 desc emp;
 
-creat table emp_ddl (
+create table emp_ddl (
     empno number(4), -- 숫자 네자리
     ename varchar2(10), -- 10 바이트
     job varchar2(9),    -- 제한보다 적은 글씨가 적히면 글씨 만큼의 공간만 차지
@@ -740,3 +740,333 @@ creat table emp_ddl (
     comm number(7,2),
     deptno number(2)
 );
+
+select * from emp_ddl;
+desc emp_ddl;
+
+creat table dept_ddl
+as select * from dept;
+
+select * from dept_ddl;
+
+creat table emp_ddl_30
+as select empno, ename, from emp where deptno =30;
+
+select * from emp_ddl_30;
+
+create table emp_alter
+    as select * from emp;
+    
+select * from emp_alter;
+
+alter table emp_alter
+add hp varchar2(20);
+
+alter table emp_alter
+rename column hp to tel;
+
+alter table emp_alter
+add hp varchar2(20);
+
+alter table emp_alter
+modify empno number(5);
+
+desc emp_alter
+
+-- 자료형의 크기가 커지는건 가능(줄어드는건 불가능)
+alter table emp_alter
+modify empno number(4);
+
+alter table emp_alter
+drop column tel;
+
+select * from emp_alter;
+
+alter table emp_alter
+drop column comm;
+
+rename emp_alter to emp_rename;
+
+select * from emp_rename;
+
+truncate table emp_rename;
+
+drop table emp_rename;
+
+-- 10장
+create table dept_temp
+as select * from dept;
+
+select * from dept_temp;
+
+insert into dept_temp (deptno, dname, loc)
+                values (50, 'DATABASE', 'SEOUL');
+
+select * from dept_temp;
+
+insert into dept_temp
+values (60, 'NETWORK','BUSAN');
+
+-- 테이블명 뒤에 ()를 생략하면 모든 컬럼
+insert into dept_temp
+values ('NETWORK', 60 ,'BUSAN');
+
+insert into dept_temp
+values (70,'웹',null);
+select * from dept_temp;
+
+-- ''도 null로 보이는데 그래도 null이라고 쓰는 편이 좋다
+-- java에서 읽을때 ''는 null로 인식하지 않기 때문에.
+insert into dept_temp
+values (80,'mobile','');
+select * from dept_temp;
+
+-- 컬럼을 생략하면 자동으로 null이 들어간다
+insert into dept_temp(deptno, loc)
+values (90, 'INCHEON');
+
+select * from dept_temp where loc is null;
+
+create table emp_temp
+as select * from emp;
+
+select * from emp_temp;
+
+insert into emp_temp (empno, ename, hiredate, sal, comm,deptno)
+values (9999,'홍길동', '2001/01/02',5000,1000,10);
+
+insert into emp_temp (empno, ename, hiredate, sal, comm,deptno)
+values (1111,'성춘향', '2001/01/05',4000,null,20);
+
+insert into emp_temp (empno,ename, hiredate, sal, comm,deptno)
+values (2111,'이순신','2001/01/07',4000,null,20);
+
+insert into emp_temp (empno,ename, hiredate, sal, comm,deptno)
+values (3111,'심청이',sysdate,4000,null,30);
+
+select * from emp_temp;
+
+insert into emp_temp 
+select * from emp where deptno = 10;
+
+create table dept_temp2
+as select * from dept;
+
+update dept_temp2
+set loc ='seoul';
+
+select * from dept_temp2;
+
+rollback;
+
+-- update 하기전에 select로 where 조건이 정확한지 확인
+-- where를 그대로 복사해서 update에 붙여넣도록 하자
+update dept_temp2
+set loc ='SEOUL', dname = 'DATAbase'
+where deptno = 40;
+
+select * from dept_temp2;
+where deptno = 40;
+
+create table emp_temp2
+    as select * from emp;
+
+select * from emp_temp2; 
+
+select * from emp_temp2
+where job = 'MANAGER';
+
+delete emp_temp2
+where job = 'MANAGER';
+
+-- emp_temp2에서
+-- 급여가 1000이하인 사원의
+-- 급여를 3% 인상하시오
+select ename, sal, (sal*1.03) from emp
+where sal <= 1000;
+
+update emp_temp2
+set sal = sal*1.03
+where sal <= 1000;
+
+select * from emp_temp2;
+
+delete emp_temp2;
+
+select * from emp_temp2;
+
+rollback;
+
+select * from dict;
+select * from user_tables;
+
+select * from USER_CONSTRAINTS;
+
+-- index 색인
+-- 오름차순, 내림차순 따로 관리
+create index idx_emp_sal
+    on emp(sal);
+select * from user_indexes;
+
+drop index idx_emp_sal;
+
+-- 강제 hint 
+select /*+ index(idx_emp_sal)*/
+* from emp e
+order by empno desc;
+-- plan
+-- sql developer에서는 상단 세번째 아이콘 "계획설명"
+
+create index idx_emp_empno_desc
+on emp(empno desc);
+
+select max(empno)+1 from emp_temp2;
+
+insert into emp_temp2 (empno, ename)
+values ((select max(empno)+1 from emp_temp2),'신입이');
+
+insert into emp_temp2 (empno, ename)
+values ((select max(empno)+1 from emp_temp2),'신입이2');
+
+select * from emp_temp2;
+
+create table tb_user (
+        user_id number,
+        user_name varchar2(30)
+);
+select * from tb_user;
+
+create sequence seq_user;
+
+select seq_user.nextval from dual;
+select seq_user.currval from dual;
+
+-- 시퀀스의 숫자가 항상 연속적이여야 하진 않는다 (유니크한 숫자라면)
+insert into tb_user (user_id, user_name)
+values (seq_user.nextval,'유저명1');
+insert into tb_user (user_id, user_name)
+values (seq_user.nextval,'유저명2');
+insert into tb_user (user_id, user_name)
+values (seq_user.nextval,'유저명3');
+select * from tb_user;
+
+create sequence seq_test 
+start with 10000    -- 시작 숫자(기본값: 1)
+increment by 100;   -- 증감 숫자(기본값: 1)
+
+-- nextval을 한번도 사용하지 않은 경우
+-- currval 사용 못함 
+select seq_test.currval from dual;
+select seq_test.nextval from dual;
+
+select seq_test.currval from dual;
+
+-- 시퀀스가 cycle이 있을 경우 시작값이 아닌 MINVALUE(최솟값)으로 가게된다(책이 틀림)
+
+-- 시퀀스가 alert로 수정이 가능하지만 drop으로 삭제한 후 다시만드는게 편하다
+
+-- primary key, pk, 주요키, 중요키, rlqhszl
+-- not null + unique 조건
+-- 생성과 동시에 index도 생성해줌 
+-- create table에서는 primary key를 딱 하나만 지정
+-- 두개 이상의 컬럼을 primary key 지정 하려면 alter 사용
+create table table_pk(
+    login_id varchar2(20) primary key,
+    login_pwd varchar2 (20) not null,
+    tel varchar2(20)
+);
+
+select * from user_constraints
+where table_name ='TABLE_PK';
+
+select * from user_indexes;
+
+create table table_pk2(
+    login_id varchar2(20)constraint pk_table2_id primary key,
+    login_pwd varchar2 (20) constraint pk_table2_pw not null,
+    tel varchar2(20)
+);
+
+select * from user_constraints;
+
+insert into table_pk (login_id, login_pwd, tel)
+values ('id','pw',null);
+-- 한번더 하면 유니크 제약조건을 위반하였다는 에러가 나옴
+insert into table_pk (login_id, login_pwd, tel)
+values ('id','pw',null);
+-- null을 넣을 수 없다고 에러가 뜸 (제약조건은 실수를 방지해 준다)
+insert into table_pk (login_id, login_pwd, tel)
+values ('pw',null);
+
+create table table_pk3(
+    login_id varchar2(20) ,
+    login_pwd varchar2 (20),
+    tel varchar2(20),
+    
+    primary key (login_id, login_pwd)
+);
+insert into table_pk3
+values ('id1','pw1',null);
+insert into table_pk3
+values ('id1','pw2',null);
+select * from table_pk3;
+
+select * from user_constraints
+where table_name ='TABLE_PK3';
+
+create table dept_fk (
+    deptno1 number primary key,
+    dname varchar2(14)
+);
+-- foreign key, FK, 외래키, 참조키
+-- 대상이 되는 테이블의 컬럼과 같은 타입으로 지정해야 한다
+-- 컬럼명은 서로 달라도 관계 없다(보통 같게 한다)
+-- 대상이 되는 컬럼은 PK여야 한다
+create table emp_fk (
+    empno number primary key, 
+    ename varchar2(10),
+    deptno number references dept_fk(deptno1)
+--    deptno number references dept_fk -- 만약 컬럼 명이 같다면 생략가능
+);
+
+insert into dept_fk
+values(100,'1강의실');
+
+insert into emp_fk -- emp_fk에 없으니까 에러
+values(1, '이름', 101);
+
+insert into emp_fk
+values(1, '이름', 100);
+
+update emp_fk
+set deptno = 101;
+
+update dept_fk
+set deptno1 = 101; 
+-- emp_fk에서 100을 참조하고있어서 수정, 삭제 불가
+delete dept_fk;
+truncate table dept_fk;
+
+delete emp_fk;
+update dept_fk set deptno1 = 101;
+
+create table emp_fk2 (
+    empno number primary key, 
+    ename varchar2(10),
+    deptno number,
+    foreign kry(deptno)references dept_fk(deptno1)
+);
+
+create table table_default(
+login_id varchar2(20),
+login_pwd varchar2(20),
+tel varchar2(20) default '000-000'
+);
+
+insert into table_default
+values('id','pw','010-123-4567');
+insert into table_default (login_id, login_pwd)
+values ('id2','pw2');
+select * from table_default;
+
+
