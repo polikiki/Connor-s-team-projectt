@@ -1,0 +1,28 @@
+package chap05;
+
+public class RefExam {
+
+	public static void main(String[] args) {
+		
+		int a;
+//		System.out.println(a);
+//		int b = a;
+		
+		String c ="최민수";
+		// = 을 기준으로 오른쪽 먼저 실행됨
+		// "최민수"가 힙heap 영역에 비어있는 번지에 들어간다
+		// 스택stack 영역의 c에 그 번지가 기록된다
+		
+		System.out.println(" c : " + c);
+		System.out.println("c == null : " +(c == null) );
+		System.out.println("c != null : " +(c != null));
+		
+		c = null; // 주소값을 비워서 연결 끊기		
+		
+		System.out.println(" c : " + c);
+		System.out.println("c == null : " +(c == null) );
+		System.out.println("c != null : " +(c != null));
+		
+	}
+
+}

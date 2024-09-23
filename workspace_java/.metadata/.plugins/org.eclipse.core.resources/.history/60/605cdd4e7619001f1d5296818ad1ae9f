@@ -1,0 +1,25 @@
+package sec01.exam01;
+
+public class TypeCastingExam {
+
+	public static void main(String[] args) {
+		
+		int a = 2+(2*2);
+		long b = (long)a; //int인 a를 long타입으로 바꿔라
+						   // long이 long 타입에 들어가는건 문제가 안된다
+		long c = a; // 작은거에서 큰걸로 바뀔때는 손실이 없으므로
+					// 형변환을 생략할 수 있다
+					// 자동 형변환
+					// 묵시적, 암시적, 암묵적 형변환
+		System.out.println("c : "+c);
+		
+		a = (int)c; // 큰거에서 작은거로 바뀔때에는 손실이 있을 수 있다
+					// 그래서 형변환을 생략할 수 없다
+					// 이를 명시적, 또는 강제 형변환이라고 한다
+		c = 3000000000L;
+		a= (int)c;
+		System.out.println("a:"+a);
+		
+	}
+
+}

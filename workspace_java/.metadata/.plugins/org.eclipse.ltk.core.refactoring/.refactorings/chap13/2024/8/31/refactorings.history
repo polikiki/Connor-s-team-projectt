@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;chap13&apos; to &apos;_chap13&apos;&#x0D;&#x0A;- Original project: &apos;chap13&apos;&#x0D;&#x0A;- Original element: &apos;chap13/src/chap13&apos;&#x0D;&#x0A;- Renamed element: &apos;chap13/src/_chap13&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;chap13&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;chap13" name="_chap13" qualified="false" references="true" stamp="1722557707743" textual="false" version="1.0"/>
+</session>

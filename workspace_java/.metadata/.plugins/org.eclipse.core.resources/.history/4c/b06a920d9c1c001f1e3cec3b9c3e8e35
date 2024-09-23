@@ -1,0 +1,136 @@
+package sec01.exam01;
+
+public class ForExam {
+
+	public static void main(String[] args) {
+		
+		// 1씩 증가하는걸 5번 할꺼임
+		int sum = 0;
+		sum = sum +1;
+//		sum += 1;
+//		sum++;
+		sum = sum +1;
+		sum = sum +1;
+		sum = sum +1;
+		sum = sum +1;
+		System.out.println(sum);
+	
+		// 1부터 5를 더할 꺼임
+		
+		sum = 0;
+		sum = sum +1;
+		sum = sum +2;
+		sum = sum +3;
+		sum = sum +4;
+		sum = sum +5;
+		System.out.println(sum);
+		
+		// 이번엔 1,2,3..에 해당하는걸 변수에 넣어보자
+		sum =0;
+		
+		
+		// 초기화식
+		int i = 0; 
+//		sum = sum + i;	// +1  
+//		sum = sum + i+1;	// +2
+		i++;// i == 2
+		
+		// 증감식
+		sum = sum +i;		// +2
+	
+		
+		//실행문
+		i++;// i == 3
+		sum = sum +i;		// +3
+		
+		
+		/*
+		 * 반복문 찾는 원리
+		 * 
+		 * 반복 되는것 찾기 ctrl+c, v 해도 바뀌지 않는 것
+		 * 
+		 * 반복 되지 않는 것
+		 * 		팬턴(규칙)을 찾을 수 있다면 반복문으로 만들 수 있음
+		 * 
+		 * 반복 되지 않는것의 시작조건 찾기
+		 * 		시작조건 찾기
+		 * 		종료 조건 찾기 
+		 * 
+		 * for: 반복 횟수를 아는 경우
+		 * while: 반복 횟수를 모르는 경우
+		 */
+		
+		// 조건이 참이면
+		// 실행블럭 실행하고
+		// 증감식 실행하고
+		// 다시 조건 보기 반복
+		// for(초기화식; 조건; 증감식) {
+		//      실행블럭
+		// }
+		
+		int sum2 = 0;
+		for( int e = 1 ; e<=5  ; e++ ) {
+			sum2 = sum2 + e;
+			System.out.println("안쪽에서는 e :"+ e +" sum2 : "+ sum2);
+		}
+	System.out.println("for 사용 sum2 : "+ sum2);
+	
+	int sum3 = 0;
+	for ( int a=0 ; a <=10 ; a++ ) {
+		sum3 += a;
+	}
+	System.out.println(sum3);
+	
+	//조금 쉽게 1~10까지 출력
+	//첫번째 방법
+	System.out.println(1);
+	System.out.println(2);
+	System.out.println(3);
+	System.out.println(4);
+	
+	//반복되는걸 찾는 쉬운 방법
+	//일단 복사합니다
+	//그리고 붙여넣습니다
+	//마지막으로 변경할 걸 찾아요
+	// 그리고 변경하는 규칙도 찾습니다
+	//변경되는걸 변수로 바꿉니다
+	
+	System.out.println(5);
+	int i2 = 5+1;
+	System.out.println(i2);
+	i2 = i2+1;
+	System.out.println(i2);
+	i2 = i2+1;
+	
+	// for로 만들자
+	for(int i3 = 1; i3 <=10; i3 =i3+1) {
+		System.out.println(i3);
+	}
+	for(int i3 = 1; i3 <=10; i3 =i3+1) {
+		System.out.print(i3+",");
+	}
+	
+	// 1~10 까지 짝수만 출력하기
+	// 1. 증감식 이용하기
+	// 2. if문 이용하기
+	
+	// 1~10까지 한줄에 3개씩 출력되게
+	
+	
+	int d1 = 0 ;
+	
+	for(int d=1; d<=10; d= d*2) {
+		System.out.println(d);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	}
+}

@@ -1,0 +1,76 @@
+package sec01.exam01;
+
+public class 연산자Exam {
+
+	public static void main(String[] args) {
+
+		int a = 10;
+		a = 11;
+		a = 10 + 1;
+		int b = a + 1;
+		// a = 11 +1
+		a = a + 1;   //a = 1 + a
+		a += 1 ;	// a = a + 1와 같다
+		a++; 		// a += 1와 같다
+		++a;
+
+		a = 10;
+		a++;
+		System.out.println("a  :"+ a);
+		
+		a = a - 2;
+		a -= 2;
+		a -= 1;
+		a--; 		// a = a-1과 같다
+		--a;
+		
+		a = 10;
+		a--;
+		System.out.println("a  :"+ a);
+		//현재 a가 9
+		System.out.println("++a :"+ ++a); // 출력 : 10
+		System.out.println("++a :"+ a++); // 출력 : 10
+		System.out.println("a :"+ a); // 출력 : 11
+		// 현재 a가 11
+		
+		System.out.println( a++  + ++a);
+//		11 + (a가 12가 된 상태)에다가 1더하기 해서 예측 : 11 + 13
+		//위 내용을 풀어쓰기
+		a = 11;
+		int result = a; // a
+		a = a + 1;		// a다음에 오는 ++
+		a = a + 1;		// 두번째 a 앞에 오는 ++
+		result = result + a;
+		System.out.println(result);
+		
+		boolean c = true;
+		System.out.println("c :" + c);
+		c = !c;
+		System.out.println("c :" + c);
+		
+		double d = 7.0;
+		System.out.println(d / 3);
+//		System.out.println(3 / 0); // double 일때는 infinity, int일때는 / by zero
+		
+		int f = 10;
+		int p = 5;
+		System.out.println("몫 :" + (f / p));
+		System.out.println("나머지 :" + (f % p));
+		
+		
+		// 나 돈 10000원이 있어요
+		// 커피 4500원짜리 몇잔 살 수 있나요
+		
+		int dollar = 10000;
+		int coffee = 4500;
+		
+		System.out.println("10000원으로 살수 있는 커피 잔:"+ (dollar/coffee));
+		
+		int change = dollar % coffee;
+		System.out.println("잔돈 :"+ change);
+		
+		
+		
+	}
+
+}

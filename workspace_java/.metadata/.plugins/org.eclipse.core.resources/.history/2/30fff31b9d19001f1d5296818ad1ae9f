@@ -1,0 +1,122 @@
+package sec01.exam01;
+
+public class 연산자Exam {
+
+	public static void main(String[] args) {
+
+		int a = 10;
+		a = 11;
+		a = 10 + 1;
+		int b = a + 1;
+		// a = 11 +1
+		a = a + 1;   //a = 1 + a
+		a += 1 ;	// a = a + 1와 같다
+		a++; 		// a += 1와 같다
+		++a;
+
+		a = 10;
+		a++;
+		System.out.println("a  :"+ a);
+		
+		a = a - 2;
+		a -= 2;
+		a -= 1;
+		a--; 		// a = a-1과 같다
+		--a;
+		
+		a = 10;
+		a--;
+		System.out.println("a  :"+ a);
+		//현재 a가 9
+		System.out.println("++a :"+ ++a); // 출력 : 10
+		System.out.println("++a :"+ a++); // 출력 : 10
+		System.out.println("a :"+ a); // 출력 : 11
+		// 현재 a가 11
+		
+		System.out.println( a++  + ++a);
+//		11 + (a가 12가 된 상태)에다가 1더하기 해서 예측 : 11 + 13
+		//위 내용을 풀어쓰기
+		a = 11;
+		int result = a; // a
+		a = a + 1;		// a다음에 오는 ++
+		a = a + 1;		// 두번째 a 앞에 오는 ++
+		result = result + a;
+		System.out.println(result);
+		
+		boolean c = true;
+		System.out.println("c :" + c);
+		c = !c;
+		System.out.println("c :" + c);
+		
+		double d = 7.0;
+		System.out.println(d / 3);
+//		System.out.println(3 / 0); // double 일때는 infinity, int일때는 / by zero
+		
+		int f = 10;
+		int p = 5;
+		System.out.println("몫 :" + (f / p));
+		System.out.println("나머지 :" + (f % p));
+		
+		
+		// 나 돈 10000원이 있어요
+		// 커피 4500원짜리 몇잔 살 수 있나요
+		
+		int dollar = 10000;
+		int coffee = 4500;
+		
+		System.out.println("10000원으로 살수 있는 커피 잔:"+ (dollar/coffee));
+		
+		int change = dollar % coffee;
+		System.out.println("잔돈 :"+ change);
+		
+		// 올리브영에서 전품목 15%행사를 합니다.
+		// 1. 꿀홍차 5000원을 샀을 때 얼마를 내야 하나요?
+		// 2. 꿀홍차 5000원과 립스틱 10000을 샀어요 얼마를 내야하나요
+
+		int tea = 5000;
+		double percent = 0.15;
+		int reap = 10000;
+	
+		double discount = tea*percent;
+		System.out.println("할인받을 금액 :" + discount);
+		double pay = tea* (1-percent);
+		System.out.println("내야하는돈 :"+ pay);
+		
+		int fee = tea + reap;
+		System.out.println(fee);
+		
+		// 7234원이 있어요 
+		// 5000원 짜리, 1000원, 500원, 100원, 50원, 10원, 1원
+		// 각각 최대 몇개까지로 표현할 수 있나요?
+		
+		int total = 7234;
+		int five = 5000;
+		System.out.println("5000원이 몇개 필요?"+ (total/five));
+		
+		int ch = total%five;
+		int thousand = 1000;
+		System.out.println("1000원이 몇개 필요?"+ (ch/thousand));
+		
+		int ch1 = ch%thousand;
+		int fiveh = 500;
+		System.out.println("500원이 몇개 필요?"+ (ch1/fiveh));
+		
+		int ch2 = ch1%fiveh;
+		int hun = 100;
+		System.out.println("100원이 몇개 필요?"+ (ch2/hun));
+		
+		int ch3 = ch2%hun;
+		int fif = 50;
+		System.out.println("50원이 몇개 필요?"+ (ch3/fif));
+		
+		int ch4 = ch3%fif;
+		int ten = 10;
+		System.out.println("10원이 몇개 필요?"+ (ch4/ten));
+
+		
+		
+		
+		
+	}
+
+}

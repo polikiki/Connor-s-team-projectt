@@ -1,0 +1,50 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%-- <c:if test="${cmd == "detail"}"> --%>
+<!-- <h1>회원상세</h1> -->
+<!-- </c:if> -->
+
+<c:choose>
+	<c:when test='${cmd == "detail"}'>
+		<h1>회원상세</h1>
+	</c:when>
+	<c:otherwise>
+		<h1>회원가입</h1>
+	</c:otherwise>
+</c:choose>
+
+<h1>회원가입</h1>
+
+<form method="post" action="emp0">
+	empno : 
+		<c:choose>
+		<c:when test="${cmd == "detail"}">
+			${empDTP.empno}
+		</c:when>
+		<c:otherwise>
+			<input type="text" name="ename"><br>
+		</c:otherwise>
+	</c:choose>
+	<br>
+	ename :
+		<c:choose>
+		<c:when test="${cmd == "detail"}">
+			${empDTP.ename}
+		</c:when>
+		<c:otherwise>
+			<input type="submit" name="가입하기"><br>
+		</c:otherwise>
+</c:choose>
+	hireDate : <input type="date" name="hireDate"><br>
+	<br>
+	<input type="submit" value="가입하기">
+</form>
+</body>
+</html>

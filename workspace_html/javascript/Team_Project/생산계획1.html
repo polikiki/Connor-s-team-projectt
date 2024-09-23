@@ -1,0 +1,287 @@
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .container {
+        background-color: #F0F0E8;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .top {
+        color: #676767;
+        font-size: 24px;
+        font-weight: bold;
+        height: 15vh;
+    }
+
+    .title {
+        padding-top: 30px;
+        margin-left: 100px;
+    }
+
+    .title img {
+        vertical-align: middle;
+        /* 이미지와 텍스트의 높낮이를 맞추기 위해 추가 */
+    }
+
+    .title span {
+        vertical-align: middle;
+        /* 이미지와 텍스트의 높낮이를 맞추기 위해 추가 */
+    }
+
+    .search_container {
+        display: flex;
+        align-items: center;
+        margin: 0 100px;
+        height: 20vh;
+        background-color: #E9E4DC;
+    }
+
+    .search_item {
+        margin: 10px 100px;
+        height: 50vh;
+        background-color: white;
+        overflow-y: auto; /*행추가로 인해 범위를 벗어나면 스크롤 활성화시킴*/
+    }
+
+    .search {
+        margin-left: 40px;
+    }
+
+    .search_input {
+        height: 40px;
+        font-size: 20px;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    .select {
+        margin-right: 20px;
+        height: 40px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .input_style {
+        height: 30px;
+        font-size: 20px;
+    }
+
+    .gray {
+        position: sticky; /* 스크롤이 활성화 되어도 회색바는 상단에 고정 */
+        top: 0;
+        width: 100%;
+        height: 10%;
+        background-color: #848484;
+        display: flex;
+    }
+
+    .gray_bottom {
+        position: sticky; /* 스크롤이 활성화 되어도 회색바는 상단에 고정 */
+        margin-top: 50;
+        top: 0;
+        width: 100%;
+        height: 10%;
+        background-color: #848484;
+        display: flex;
+    }
+
+    .content {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .input_text {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+    }
+
+    .input_text input {
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 15px;
+        transition: border-color 0.5s;
+    }
+
+    .input_text input:focus {
+        border-color: black;
+        outline: none;
+    }
+
+    .regBtn {
+        margin: 0 100px;
+        text-align: right;
+        margin-top: 30px;
+
+
+    }
+
+    .Btn_css {
+        padding: 15px;
+        background-color: #3F3B3B;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .text_ {
+        text-align: center;
+    }
+
+    .delete-checkbox {
+        transform: scale(1.5); /* 체크박스 크기 크게 */
+        margin-left: 10px;
+        width: 20px;
+        margin-top: 15px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="title">
+                <img src="image/IMG_file.png" style="width: 30px;">
+                <span>생산계획 관리</span>
+            </div>
+        </div>
+        <div class="search_container">
+            <div class="search">
+                생산기간 :
+                <input class="input_style" type="date" id="startDate" max="2025-06-20" min="2001-06-05"
+                    value="2024-07-19">
+                ~
+                <input class="input_style" type="date" id="endDate" max="2025-06-20" min="2001-06-05"
+                    value="2024-07-19">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <select class="select">
+                    <option>-----</option>
+                    <option>제품코드</option>
+                    <option>제품명</option>
+                    <option>생산계획 NO</option>
+                </select>
+                <input class="search_input" type="text" placeholder="검색어를 입력해주세요">
+                <img style="margin-left: 30px;margin-right: 30px;" src="image/돋보기.png" onclick="searchTable()">
+            </div>
+        </div>
+        <div class="search_item">
+                <div class="gray">
+                    <div class="content" style="width: 20%; margin-left: 20px;">생산계획No.</div>
+                    <div class="content" style="width: 20%;">제품코드</div>
+                    <div class="content" style="width: 20%;">제품명</div>
+                    <div class="content" style="width: 13%;">착수일</div>
+                    <div class="content" style="width: 13%;">종료일</div>
+                    <div class="content" style="width: 14%;">생산수량</div>
+                </div>
+                <div class="input_text">
+                    <div><input type="checkbox" class="delete-checkbox"></div>
+                    <input class="text_" type="text" style="width: 18%;">
+                    <input class="text_" type="text" style="width: 18%;">
+                    <input class="text_" type="text" style="width: 19%;">
+                    <input class="text_" type="text" style="width: 12%;">
+                    <input class="text_" type="text" style="width: 13%;">
+                    <input class="text_" type="text" style="width: 13%;">
+                </div>
+                <div class="input_text">
+                    <div><input type="checkbox" class="delete-checkbox"></div>
+                    <input class="text_" type="text" style="width: 18%;">
+                    <input class="text_" type="text" style="width: 18%;">
+                    <input class="text_" type="text" style="width: 19%;">
+                    <input class="text_" type="text" style="width: 12%;">
+                    <input class="text_" type="text" style="width: 13%;">
+                    <input class="text_" type="text" style="width: 13%;">
+                </div>
+                <div class="gray_bottom">
+                    <div class="content" style="width: 20%; margin-left: 20px;">공정코드</div>
+                    <div class="content" style="width: 20%;">공정명</div>
+                    <div class="content" style="width: 20%;">소요(분)</div>
+                    <div class="content" style="width: 13%;">지시일자</div>
+                    <div class="content" style="width: 25%;">비고사항</div>
+                </div>
+        </div>
+        <div class="regBtn">
+            <span class="Btn_css" onclick="insertSelectedRows()">행 추가</span>
+            <span class="Btn_css" onclick="deleteSelectedRows()">선택된 행 삭제</span>
+            <span class="Btn_css" id="regBtn">생산계획 등록</span>
+        </div>
+    </div>
+</body>
+<script>
+    function deleteSelectedRows() { //체크박스 선택된 행 삭제 
+        let checkboxes = document.querySelectorAll('.delete-checkbox');
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                checkbox.closest('.input_text').remove();
+            }
+        });
+    }
+
+    function insertSelectedRows() {
+
+        // 새로운 input_text div 생성
+        let newRow = document.createElement('div');
+        newRow.className = 'input_text';
+
+        // 새로운 체크박스 추가
+        let checkboxDiv = document.createElement('div');
+        let checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.className = 'delete-checkbox';
+        checkboxDiv.appendChild(checkbox);
+        newRow.appendChild(checkboxDiv);
+        // 새로운 텍스트 입력 필드 추가
+        for (let i = 0; i < 6; i++) {
+            let input = document.createElement('input');
+            input.className = 'text_';
+            input.type = 'text';
+
+            // 너비 설정
+            if (i === 0 || i === 1) {
+                input.style.width = '18%';
+            } else if (i === 2) {
+                input.style.width = '19%';
+            } else if (i === 3) {
+                input.style.width = '12%';
+            } else {
+                input.style.width = '13%';
+            }
+
+            newRow.appendChild(input);
+        }
+
+        // search_item div에 새로운 행 추가
+        document.querySelector('.search_item').appendChild(newRow);
+
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        let registerButton = document.querySelector('#regBtn');
+
+        registerButton.addEventListener('click', function () {
+            let content = document.querySelector('#content').value;
+            let regDate = document.querySelector('#regDate').value;
+            let writer = document.querySelector('#writer').value;
+            if (content.length == 0) {
+                alert("내역을 입력해주세요");
+                return;
+            }
+            if (writer.length == 0) {
+                alert('작성자를 입력해주세요');
+                return;
+            }
+            alert(`${content} 작업지시서가 등록되었습니다.\n등록일 : ${regDate}\n작성자 : ${writer}`);
+            window.location.href = '작업지시서.html';
+        });
+    });
+</script>

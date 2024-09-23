@@ -1,0 +1,17 @@
+package sec01.exam01;
+
+public class IfExam {
+
+	public static void main(String[] args) {
+		
+		int score = 90;
+		
+		if(score >= 90) { 
+			System.out.println("90점 이상입니다");
+		}
+		if(score < 90) {
+			System.out.println("90점 미만입니다");
+		}
+		
+	}
+}

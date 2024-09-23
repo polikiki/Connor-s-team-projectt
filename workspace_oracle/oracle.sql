@@ -726,6 +726,9 @@ and sal > all(select sal from emp where job = 'SALESMAN'
 group by sal)
 order by e.empno;
 
+select o.order_time, o.order_type, o.total_price, o.sepcial_requset, o.order_address, oi.quantity, mi.menu_name, mi.menu_price
+from oders o LEFT OUTER JOIN order_itmes oi ON (o.orders_id = oi.orders_id)
+             LEFT OUTER JOIN menu_items mi ON (oi.menu_items = mi.menu_items);
 -- 12¿Â
 select * from emp;
 desc emp;
@@ -1068,5 +1071,8 @@ values('id','pw','010-123-4567');
 insert into table_default (login_id, login_pwd)
 values ('id2','pw2');
 select * from table_default;
+
+
+
 
 

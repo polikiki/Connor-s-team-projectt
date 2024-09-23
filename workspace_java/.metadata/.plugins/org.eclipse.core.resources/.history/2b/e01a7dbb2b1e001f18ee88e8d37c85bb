@@ -1,0 +1,16 @@
+package chap05;
+
+public class RefExam {
+
+	public static void main(String[] args) {
+		
+		int a;
+//		System.out.println(a);
+//		int b = a;
+		
+		tring c ="최민수";
+		
+
+	}
+
+}

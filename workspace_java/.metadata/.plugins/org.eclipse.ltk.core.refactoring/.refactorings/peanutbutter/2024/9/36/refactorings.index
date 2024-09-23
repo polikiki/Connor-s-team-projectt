@@ -1,0 +1,98 @@
+1725263090859	Copy file
+1725263215573	Rename resource 'PlanList.jsp'
+1725326173513	Copy compilation unit
+1725331365187	Delete element
+1725331398697	Copy compilation unit
+1725332340177	Copy compilation unit
+1725332364502	Rename compilation unit 'Product_ManagementDTO.java'
+1725333993645	Rename compilation unit 'Product_ManagementService.java'
+1725334324575	Rename compilation unit 'Plan_Management_DAO.java'
+1725334654625	Rename resource 'PlanInsert.jsp'
+1725334678269	Rename resource 'PLInsert.jsp'
+1725349716615	Rename type 'plan_Management_ProductDB_Forward'
+1725354369040	Copy file
+1725354544324	Copy compilation unit
+1725354614712	Rename compilation unit 'Part_MangementController.java'
+1725354947017	Copy compilation unit
+1725355214865	Rename compilation unit 'Product_Management_PageDAO.java'
+1725355980078	Rename type 'plan_ProductDB_Forward'
+1725355997937	Rename type 'plan_Management_InsertController'
+1725410563014	Copy compilation unit
+1725410583916	Rename compilation unit 'Part_Management_Page_Service.java'
+1725410698204	Rename package 'pl.Service'
+1725412045704	Copy compilation unit
+1725412064782	Rename compilation unit 'Part_Management_Delete_Controller.java'
+1725413304090	Copy file
+1725414459104	Copy compilation unit
+1725414477045	Rename compilation unit 'Part_Management_Modify_Controller.java'
+1725425605241	Rename resource 'Memo.jsp'
+1725428021937	Copy file
+1725428025824	Delete element
+1725434766979	Copy compilation unit
+1725434825543	Rename compilation unit 'Plan_ManagementDAO.java'
+1725441304737	Copy file
+1725496663348	Copy compilation unit
+1725496972131	Rename compilation unit 'Plan_MangementController.java'
+1725497023669	Copy compilation unit
+1725497194702	Rename compilation unit 'Plan_Management_Page_Service.java'
+1725497335828	Copy compilation unit
+1725497373194	Rename compilation unit 'Plan_ManagementService.java'
+1725497541350	Copy compilation unit
+1725497666162	Rename compilation unit 'Plan_ManagementDTO.java'
+1725497768427	Copy compilation unit
+1725497799751	Rename compilation unit 'Plan_Management_PageDAO.java'
+1725497971762	Copy compilation unit
+1725499065257	Rename compilation unit 'Specification_Controller.java'
+1725522234592	Copy compilation unit
+1725522293752	Rename compilation unit 'plan_Management_Insert_Controller.java'
+1725524134658	Delete element
+1725527536718	Delete element
+1725527888553	Delete elements
+1725527917103	Rename compilation unit 'Specification_Management_Insert_Controller.java'
+1725528218641	Copy compilation unit
+1725528246686	Rename compilation unit 'Plan_Management_Delete_Controller.java'
+1725594321206	Copy file
+1725599071971	Copy compilation units
+1725599131702	Copy compilation unit
+1725599163967	Rename compilation unit 'Specification_ManagementDTO.java'
+1725602103196	Delete elements
+1725602115900	Delete elements
+1725602223133	Copy packages
+1725603288334	Rename compilation unit 'Part_ManagementDTO.java'
+1725603332779	Rename compilation unit 'Part_Management_PageDAO.java'
+1725605405440	Rename compilation unit 'Part_ManagementDAO.java'
+1725605421043	Rename compilation unit 'Part_STOCK_ManagementDAO.java'
+1725606847833	Rename compilation unit 'Part_Management_Page_Service.java'
+1725608652622	Rename compilation unit 'Part_ManagementService.java'
+1725610463891	Rename type 'Part_MangementController'
+1725610855243	Delete elements
+1725612757377	Copy compilation unit
+1725613432396	Copy compilation unit
+1725614290191	Rename compilation unit 'Product_ManagementDTO.java'
+1725691480072	Rename type 'Product_ManagementDTO'
+1725691512372	Rename type 'Product_Stock_ManagementDTO'
+1725691683057	Copy compilation unit
+1725691688599	Copy compilation unit
+1725691701820	Delete element
+1725691704167	Delete element
+1725691715480	Copy compilation unit
+1725691721353	Copy compilation unit
+1725691738494	Rename compilation unit 'Product_Management_PageDAO.java'
+1725692563432	Rename compilation unit 'Product_ManagementDAO.java'
+1725694391779	Copy compilation unit
+1725694400626	Copy compilation unit
+1725694411641	Delete element
+1725694414736	Delete element
+1725694430993	Copy compilation units
+1725694451984	Rename compilation unit 'Product_Management_Page_Service.java'
+1725694468687	Rename compilation unit 'Product_ManagementService.java'
+1725695380797	Copy compilation units
+1725695472843	Rename package 'product.stock.service'
+1725695631468	Rename compilation unit 'Product_MangementController.java'
+1725695715855	Rename compilation unit 'Product_Management_Delete_Controller.java'
+1725695757476	Copy file
+1725710519953	Move compilation unit
+1725710589057	Copy compilation unit
+1725710601565	Delete element
+1725710678339	Move compilation unit
+1725710698909	Rename compilation unit 'Part_Stock_Management_Insert_Controller.java'

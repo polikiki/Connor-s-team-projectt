@@ -1,0 +1,297 @@
+<style>
+    * {
+        box-sizing: border-box;
+
+    }
+
+    .container {
+        background-color: #F0F0E8;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .top {
+        color: #676767;
+        font-size: 24px;
+        font-weight: bold;
+        height: 15vh;
+    }
+
+    .title {
+        padding-top: 30px;
+        margin-left: 100px;
+    }
+
+    .title img {
+        vertical-align: middle;
+        /* 이미지와 텍스트의 높낮이를 맞추기 위해 추가 */
+    }
+
+    .title span {
+        vertical-align: middle;
+        /* 이미지와 텍스트의 높낮이를 맞추기 위해 추가 */
+    }
+
+
+
+    .section {
+        margin: 0 100px;
+        height: 70vh;
+        display: flex;
+        /* sideBarDiv와 tableDiv를 가로로 정렬 */
+    }
+
+    .sideBarDiv {
+        background-color: #D7D7D7;
+        width: 200px;
+        /* 고정너비 설정 */
+        padding: 10px;
+    }
+
+    .tableDiv {
+        flex: 1;
+        /* 남은공간 모두 차지 */
+        background-color: white;
+    }
+
+    .table {
+        border-collapse: collapse;
+        /* 테두리가 겹치지 않도록 설정 */
+        width: 100%;
+    }
+
+    th {
+        background-color: #b6b6b6;
+        border-right: 1px solid white;
+    }
+
+    td {
+        text-align: center;
+    }
+
+    .tbody tr {
+        border-bottom: 1px solid lightgray;
+    }
+
+    tr th,
+    tr td {
+        padding: 5px 0px;
+    }
+
+    .thead th:nth-child(1) {
+        width: 5%;
+    }
+
+    .thead th:nth-child(2) {
+        /* 부품코드 */
+        width: 10%;
+    }
+
+    .thead th:nth-child(3) {
+        /* 부품명 */
+        width: 10%;
+    }
+
+    .thead th:nth-child(4) {
+        /* 사양 */
+        width: 10%;
+    }
+
+    .thead th:nth-child(5) {
+        /* 단위 */
+        width: 5%;
+    }
+
+    .thead th:nth-child(6) {
+        /* 수량 */
+        width: 5%;
+    }
+
+    .thead th:nth-child(7) {
+        /* 거래처 */
+        width: 10%;
+    }
+
+    .Btn_css {
+        display: inline-block;
+        /* span에 padding을 적용했을 때 부모 div 밖으로 벗어나는것을 막기위해서 */
+        padding: 10px;
+        background-color: #3F3B3B;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 5px;
+    }
+
+    input[type="text"] {
+        text-align: center;
+    }
+
+    .mainMenu {
+        font-weight: bold;
+        color: gray;
+    }
+
+    .tableTopDiv {
+        height: 50px;
+        padding: 0px 10px;
+        background-color: white;
+    }
+
+    .regBtn {
+        margin: 0 100px;
+        text-align: right;
+        margin-top: 30px;
+    }
+
+    .inputText {
+        height: 25px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="title">
+                <img src="image/IMG_file.png" style="width: 30px;">
+                <span>BOM 등록(부품)</span>
+            </div>
+        </div>
+        <div class="section">
+            <div class="sideBarDiv">
+                <span class="mainMenu">GRAM-001</span>
+                <div id="subMenu" class="subMenu visible">
+                    <ul>
+                        <li>A01-01 : 디스플레이</li>
+                        <li>A03-001 : 프레임</li>
+                        <li>A04-001 : 메인보드</li>
+                        <li>B01 : CPU</li>
+                        <li>B03 : RAM</li>
+                        <li>B04 : FAN</li>
+                    </ul>
+                </div>
+                <span class="mainMenu">GRAM-002</span>
+                <div id="subMenu" class="subMenu visible">
+                    <ul>
+                        <li>A01-01 : 디스플레이</li>
+                        <li>A03-001 : 프레임</li>
+                        <li>A04-001 : 메인보드</li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <div class="tableDiv">
+                <div class="tableTopDiv">
+                    <span style="font-weight: bold;">제품 코드</span> <input type="text" class="inputText" id="code">
+                    <span style="margin-left: 20px; font-weight: bold;">제품명</span> <input type="text" class="inputText"
+                        id="name">
+                    <span class="Btn_css" style="margin-left: 150px;" onclick="addRow()">행 추가</span>
+                    <span class="Btn_css" style="margin-left: 20px;" onclick="deleteSelectedRow()">행 삭제</span>
+                </div>
+                <table class="table">
+                    <thead class="thead">
+                        <tr>
+                            <th> </th>
+                            <th>부품코드</th>
+                            <th>부품명</th>
+                            <th>사양</th>
+                            <th>단위</th>
+                            <th>수량</th>
+                            <th>거래처</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody">
+                        <tr>
+                            <td><input type="checkbox" class="delete-checkbox"></td>
+                            <td>A01-01</td>
+                            <td>디스플레이</td>
+                            <td>480*720</td>
+                            <td>개</td>
+                            <td>5</td>
+                            <td>LG</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="delete-checkbox"></td>
+                            <td><input type="text" style="width: 90%;" oninput="updateText(this)"></td>
+                            <td><input type="text" style="width: 90%;"></td>
+                            <td><input type="text" style="width: 90%;"></td>
+                            <td><input type="text" style="width: 90%;"></td>
+                            <td><input type="text" style="width: 90%;"></td>
+                            <td><input type="text" style="width: 90%;"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="regBtn">
+            <span class="Btn_css" onclick="goReg2()">BOM 공정 등록</span>
+
+        </div>
+    </div>
+</body>
+
+<script>
+
+    function addRow() { //행추가
+        let tbody = document.querySelector('.tbody');
+
+        let newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td><input type="checkbox" class="delete-checkbox"></td>
+            <td><input type="text" style="width: 90%;" ></td>
+            <td><input type="text" style="width: 90%;" ></td>
+            <td><input type="text" style="width: 90%;" ></td>
+            <td><input type="text" style="width: 90%;" ></td>
+            <td><input type="text" style="width: 90%;" ></td>
+            <td><input type="text" style="width: 90%;" ></td>
+            `;
+
+        tbody.appendChild(newRow);
+    }
+
+    function deleteSelectedRow() { //행삭제
+        let checkboxes = document.querySelectorAll('.delete-checkbox');
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                checkbox.closest('tr').remove(); //closest : 특정 요소의 가장 가까운 조상 요소를 찾는 데 사용되는 DOM 메서드
+            }
+        });
+    }
+
+    function goReg2() {
+       
+
+        let code = document.querySelector('#code').value; //제품코드
+        let name = document.querySelector('#name').value; //제품명
+
+        if (code === '') {
+            alert('제품코드를 입력해주세요');
+            return;
+        }
+        if (name === '') {
+            alert('제품명을 입력해주세요');
+            return;
+        }
+
+        // 기존 BOM아이템 배열 가져오기
+        let BOM_items = JSON.parse(sessionStorage.getItem('BOM_items')) || [];
+
+        //제품코드, 제품명을 세션에 저장
+        BOM_items.push({
+            code: code,
+            name: name
+        });
+
+        // 세션 스토리지에 BOM아이템 배열 저장
+        sessionStorage.setItem('BOM_items', JSON.stringify(BOM_items));
+
+        window.location.href = "BOMReg2.html";
+    }
+</script>

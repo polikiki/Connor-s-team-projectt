@@ -1,0 +1,124 @@
+package sec01.exam01;
+
+import java.util.Scanner;
+
+public class IfExam {
+
+	public static void main(String[] args) {
+		
+		int score = 90;
+		
+//		if(score > 90)
+		if(score >= 90)
+		{ 
+			System.out.println("90점 이상입니다");
+			
+			if(score >= 95 ) {
+				System.out.println("95점 이상입니다");
+			}
+		}
+			if(score < 90) {
+			System.out.println("90점 미만입니다");
+		}
+		
+		//참고로
+			boolean up90 = score >= 90;
+			if(up90) {
+			
+			System.out.println("up90");
+		}
+			if(!up90) {
+			System.out.println("!up90");
+		}
+			
+			if( up90 ) {
+				System.out.println("참");
+			} else {
+				// 위의 조건이 하난도 만족하지 않는 경우 무조건 실행
+				System.out.println("거짓");
+			}
+			
+			if(score >= 90) {
+				System.out.println("90점 이상입니다");
+				System.out.println("학점은 A");
+			}
+			 //위의 결과가 상관없이 실행된다
+			if (score < 90 && score >= 80 ) {
+				System.out.println("90점 미만 90점 이상입니다");
+				System.out.println("학점은 B");
+			}
+			
+			if	( score < 90 && score >= 80);{
+			}
+			
+			
+			
+			if(score >= 90) {
+				System.out.println("학점은 A");
+			}
+			else if (score < 90 && score >= 80 ) {
+				System.out.println("90점 미만 90점 이상입니다");
+				System.out.println("학점은 B");
+			}
+			
+			else {
+				System.out.println("학점은 C");
+		}
+		
+			// if, else if, else 이런식으로 묶여있으면 
+			// 그 중 하나만 실행된다
+			if(score >= 90) {
+				System.out.println("학점은 A");
+			}
+			else if (score >= 80 ) {
+				// 이거 위에 조건이 거짓일때만 여기로 온다
+				System.out.println("90점 미만 90점 이상입니다");
+				System.out.println("학점은 B");
+			}
+			
+			else {
+				System.out.println("학점은 C");
+		}
+			
+			// 3은 짝수인가?
+			int num = 4;
+			Scanner input = new Scanner(System.in);
+			num = input.nextInt();
+			if(num % 2 == 1) {
+				System.out.println("홀수");
+			} else {
+					System.out.println("짝수");
+				}
+			
+			String a ="abc";
+			String b ="abc";
+//			if( a== b)
+			if(a.equals(b)) {
+				System.out.println("a와 b가 같다");
+			} else {
+				System.out.println("a와 b가 다르다");
+			}
+			
+			double rand = Math.random();
+			System.out.println("rand :"+ rand);
+			// 0 이상 1미만
+			
+			// 주사위 : 1~6 까지
+						
+			int dice = (int)(rand *6)+1;
+			System.out.println(dice);
+			
+			int rock = (int)(rand*3)+1;
+			int sic = (int)(rand*3) +1;
+			if(rock >sic) {
+				System.out.println("왼쪽이 이겼습니다");
+			} else if (rock == sic) {
+				System.out.println("비겼습니다");
+			} else {
+				System.out.println("오른쪽이 이겼습니다");
+			}
+			
+			
+			
+	}
+}

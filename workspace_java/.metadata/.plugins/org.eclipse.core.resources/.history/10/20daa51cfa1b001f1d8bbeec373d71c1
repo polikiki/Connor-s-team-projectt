@@ -1,0 +1,19 @@
+package sec01.exam01;
+
+public class ForExam {
+
+	public static void main(String[] args) {
+		
+		// 1씩 증가하는걸 5번 할꺼임
+		int sum = 0;
+		sum = sum +1;
+//		sum += 1;
+//		sum++;
+		sum = sum +1;
+		sum = sum +1;
+		sum = sum +1;
+		sum = sum +1;
+		System.out.println(sum);
+	}
+
+}

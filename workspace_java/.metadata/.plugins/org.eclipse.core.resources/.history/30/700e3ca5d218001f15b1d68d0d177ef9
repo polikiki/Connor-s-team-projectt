@@ -1,0 +1,14 @@
+package sec01.exam01;
+
+public class VarTypeEaxm {
+
+	public static void main(String[] args) {
+		
+		byte  b = 127;
+//		b= 128;
+		char c = 97;
+		System.out.println(c);
+		
+	}
+
+}

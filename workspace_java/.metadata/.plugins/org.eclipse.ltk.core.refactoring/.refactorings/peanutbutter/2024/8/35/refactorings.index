@@ -1,0 +1,28 @@
+1724639048163	Rename resource 'PMListjsp.jsp'
+1724639944522	Delete element
+1724719854599	Rename package 'pm.Update'
+1724719861209	Delete element
+1724807923517	Delete element
+1724984167321	Copy file
+1724986925567	Copy file
+1724987047434	Rename resource 'PTModify2.jsp'
+1724988450634	Copy file
+1724989177747	Copy compilation units
+1724989217801	Rename type 'Product_MangementController'
+1724989591639	Copy compilation units
+1724992827151	Rename compilation unit 'Product_ManagementService.java'
+1724992885944	Copy package
+1724992955229	Rename compilation unit 'Product_ManagementDTO.java'
+1724994234291	Copy compilation unit
+1724994246786	Copy compilation units
+1724994308473	Rename type 'Product_Management_Insert_Controller'
+1724994351975	Delete element
+1724994358877	Delete element
+1724994372321	Copy compilation units
+1724994391761	Rename compilation unit 'Product_Management_PageDAO.java'
+1724995858423	Rename compilation unit 'Product_ManagementDAO.java'
+1724997741762	Rename compilation unit 'Product_Management_Page_Service.java'
+1724997904144	Rename type 'Product_Management_Delete_Controller'
+1724998412757	Rename compilation unit 'Product_Management_Insert_Controller.java'
+1724999185453	Copy compilation unit
+1724999232129	Rename compilation unit 'Product_Management_Modify_Controller.java'

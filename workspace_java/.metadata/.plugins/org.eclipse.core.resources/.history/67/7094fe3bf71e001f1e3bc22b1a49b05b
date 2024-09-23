@@ -1,0 +1,19 @@
+package chap05;
+
+public class ArrayCopyExam {
+
+	public static void main(String[] args) {
+		
+		String[] coffee = new String[3];
+		coffee[0] = "아아";
+		coffee[1] = "라떼";
+		coffee[2] = "말차";
+		
+		// 커피 2호점에서 1호점과 똑같은 커피를 판매할껍니다
+		String[] coffee2 = coffee;
+		for(int i=0; i<coffee2.length; i++) {
+			System.out.println(coffee2[i]);
+		}
+	}
+
+}

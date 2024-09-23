@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.emp.dynamic">
+
+	<select 
+	id="selectEmpList"
+	resultType="emp.crud.EmpDTO"
+	parameterType="emp.crud.EmpDTO">
+	 
+	 select
+	 	*
+	 from
+	 	emp0
+	 <!--
+	 	if가 거짓일때 where만 남으면 오류니까
+	 	항상 참인 1=1을 적어 놓기도 한다
+	 -->	
+<!-- 	 where 1=1 -->
+<!-- 	 	<if test="keyword != null and keyword !='' "> -->
+<!-- 	 	ename like '%' || #{keyword} || '%' -->
+<!-- 	 	</if> -->
+		<!-- 
+			<where>는 
+			* 내용이 없으면 where 자체를 지워줌
+			* 내용이 있으면 where 문을 생성해줌
+			* where 바로 다음에 and나 or는 지워줌
+			** where and a = b를 where a = b로 만듦 
+		 -->
+	 <where>
+	 	<if test="keyword != null and keyword !='' ">
+	 	and lower(ename) like '%' || lower(#{keyword}) || '%'
+	 	</if>
+	 </where>
+	</select>
+	
+	<select 
+	id="selectEmpList2"
+	resultType="emp.crud.EmpDTO"
+	parameterType="emp.crud.EmpDTO">
+	 
+	 select
+	 	*
+	 from
+	 	emp0
+	 <where>
+	 	<if test="searchType !=null and searchType !='' and keyword != null and keyword !=''">
+	 	<if test="keyword != null and keyword !='' ">
+	 	and lower(ename) like '%' || lower(#{keyword}) || '%'
+	 	</if>
+	 	</if>
+	 </where>
+	</select>
+	
+</mapper>

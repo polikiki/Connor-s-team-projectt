@@ -13,15 +13,15 @@ public class Array문제1Exam {
 		// 큰 값을 새로운 기준으로 정한다
 		// 그렇게 살아남은 값이 최대값!
 
-		int[] array2 = { 1, 5, 3, 8, 2, 9, 3 };
-		int max = Integer.MIN_VALUE; // int가 가질 수 있는 최소값, 최대값은 MAX_VALUE가 있음
-		for (int i = 0; i < array2.length; i++) {
-			if (array2[i] > max) {
-				max = array2[i];
-			}
-
-		}
-		System.out.println("최대값 : " + max);
+//		int[] array2 = { 1, 5, 3, 8, 2, 9, 3 };
+//		int max = Integer.MIN_VALUE; // int가 가질 수 있는 최소값, 최대값은 MAX_VALUE가 있음
+//		for (int i = 0; i < array2.length; i++) {
+//			if (array2[i] > max) {
+//				max = array2[i];
+//			}
+//
+//		}
+//		System.out.println("최대값 : " + max);
 
 //			배열의 예 : {1, 5, 2, 4}
 //			1. 배열 뒤집기: {4, 2, 5, 1}
@@ -53,5 +53,7 @@ public class Array문제1Exam {
 //			1) 모두다 숫자로 
 //			2) 모두다 소문자로(hint: char ascii)
 //			3) 숫자 2개 이상, 대문자 1개 이상, 소문자 1개 이상 조합
+		
+
 	}
 }
