@@ -1,0 +1,5 @@
+package kr.or.human.member.controller;
+
+public class MemberController {
+
+}

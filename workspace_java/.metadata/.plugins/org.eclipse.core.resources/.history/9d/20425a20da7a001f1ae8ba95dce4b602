@@ -1,0 +1,10 @@
+package kr.or.human.member.service;
+
+import java.util.List;
+
+public interface MemberService {
+
+	public abstract List listMember();
+	public List listMember();
+	List listMember();
+}

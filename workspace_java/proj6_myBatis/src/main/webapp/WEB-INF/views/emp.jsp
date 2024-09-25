@@ -36,7 +36,10 @@
 				<thead>
 					<tr>					
 						<th>select</th>
-						<th id="empno">empno↑↓<th>
+						<th id="empno">empno 
+							<c:if test= '${orderType == "desc"}'>↓</c:if>
+							<c:if test= '${orderType == "asc"}'>↑</c:if>
+						</th>
 						<th>ename</th>
 						<th>job</th>
 						<th>sal</th>

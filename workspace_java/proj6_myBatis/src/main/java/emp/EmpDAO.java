@@ -10,8 +10,9 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import emp.crud.EmpDTO;
+import emp.crud.iDAO;
 
-public class EmpDAO {
+public class EmpDAO implements iDAO{
 	
 	private  SqlSessionFactory sqlMapper = null;
 

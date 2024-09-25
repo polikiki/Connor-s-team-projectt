@@ -1,0 +1,9 @@
+package kr.or.human;
+
+import org.springframework.stereotype.Controller;
+
+// Controller Bean(즉 spring이 생성할 수 있는 class)으로 등록한다
+@Controller
+public class MainController {
+
+}

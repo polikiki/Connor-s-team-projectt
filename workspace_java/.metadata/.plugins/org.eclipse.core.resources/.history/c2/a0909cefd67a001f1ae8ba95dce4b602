@@ -1,0 +1,13 @@
+package kr.or.human.member.dao;
+
+import java.util.List;
+
+public class MemberDAOImpl implements MemberDAO {
+
+	@Override
+	public List selectMember() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

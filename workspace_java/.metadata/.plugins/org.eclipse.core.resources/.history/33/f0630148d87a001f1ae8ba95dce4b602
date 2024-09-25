@@ -1,0 +1,6 @@
+package kr.or.human.member.service;
+
+public class MemberServiceImpl implements MemberService {
+
+		
+}

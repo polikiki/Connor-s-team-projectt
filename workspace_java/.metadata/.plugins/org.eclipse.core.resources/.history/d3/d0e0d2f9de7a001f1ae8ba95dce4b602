@@ -1,0 +1,30 @@
+package kr.or.human.member.service;
+
+import java.util.List;
+
+import kr.or.human.member.dao.MemberDAO;
+import kr.or.human.member.dao.MemberDAOImpl;
+
+public class MemberServiceImpl implements MemberService {
+
+	MemberDAO memberDAO;
+	
+//	MemberServiceImpl(MemberDAO memberDAO){
+//		this.memberDAO = memberDAO;
+//	}
+	
+	public void setMemberDAO(MemberDAO memberDAO) {
+		this.memberDAO = memberDAO;
+	}
+	
+	@Override
+	public List listMember() {
+		
+//		MemberDAOImpl dao = new MemberDAOImpl();
+		MemberDAO dao = new MemberDAOImpl();
+		List list = this.memberDAO.selectMember();
+		return null;
+	}
+
+		
+}
