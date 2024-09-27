@@ -1,0 +1,10 @@
+package kr.or.human.emp.dto;
+
+@Getter
+@Setter
+public class MemberDTO {
+
+	private String userID;
+	private String userPW;
+	private int age;
+}

@@ -1,0 +1,15 @@
+package kr.or.human.emp.dto;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@ToString
+public class MemberDTO {
+
+	private String userID;
+	private String userPW;
+	private int age;
+	private String userName;
+}

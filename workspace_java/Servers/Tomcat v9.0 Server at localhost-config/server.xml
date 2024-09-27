@@ -160,7 +160,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="peanutbutter" path="/peanutbutter" reloadable="true" source="org.eclipse.jst.jee.server:peanutbutter"/><Context docBase="proj6_myBatis" path="/proj6_myBatis" reloadable="true" source="org.eclipse.jst.jee.server:proj6_myBatis"/><Context docBase="proj7_spring" path="/human" reloadable="true" source="org.eclipse.jst.jee.server:proj7_spring"/><Context docBase="proj8_Spring_Mybatis" path="/proj8" reloadable="true" source="org.eclipse.jst.jee.server:proj8_Spring_Mybatis"/></Host>
+      <Context docBase="peanutbutter" path="/peanutbutter" reloadable="true" source="org.eclipse.jst.jee.server:peanutbutter"/><Context docBase="proj6_myBatis" path="/proj6_myBatis" reloadable="true" source="org.eclipse.jst.jee.server:proj6_myBatis"/><Context docBase="proj8_Spring_Mybatis" path="/proj8" reloadable="true" source="org.eclipse.jst.jee.server:proj8_Spring_Mybatis"/><Context docBase="proj9_REST" path="/rest" reloadable="true" source="org.eclipse.jst.jee.server:proj9_REST"/></Host>
     </Engine>
   </Service>
 </Server>

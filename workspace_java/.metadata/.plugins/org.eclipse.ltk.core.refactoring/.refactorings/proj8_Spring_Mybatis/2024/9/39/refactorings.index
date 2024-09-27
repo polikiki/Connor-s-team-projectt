@@ -2,3 +2,9 @@
 1727244629658	Move 'mybatis.xml' to 'spring'
 1727247580045	Delete element
 1727248167867	Rename resource 'SqlMapConfig.xml'
+1727311587409	Delete element
+1727311737375	Rename type 'EmpDAOImple'
+1727328895040	Rename resource 'listEmp.jsp'
+1727328912019	Rename resource 'emplist.jsp'
+1727333344327	Copy file
+1727396784482	Copy compilation unit

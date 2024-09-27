@@ -1,0 +1,19 @@
+package kr.or.human.emp.service;
+
+import java.util.List;
+
+import kr.or.human.emp.dto.EmpDTO;
+
+public class EmpServiceImpl implements EmpService {
+
+	@Autowired
+	EmpDAO empDAO;
+	
+	@Override
+	public List<EmpDTO> listEmp() {
+		
+		
+		
+		return null;
+	}	
+}

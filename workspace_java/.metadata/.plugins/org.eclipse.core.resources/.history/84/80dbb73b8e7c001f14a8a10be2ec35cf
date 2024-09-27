@@ -1,0 +1,5 @@
+package human.class1.rest;
+
+public class RestController {
+
+}

@@ -1,0 +1,44 @@
+package human.class1.rest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller 			// 컨트롤러 클래스에 붙여서 bean에 등록할 수 있음 
+						// request mapping을 가질 수 있어서 컨트롤 역활을 할 수 있게 해줌
+//@Controller("beanID") // bean id를 지정하지 않으면
+						// class 명의 앞글자가 소문자인 bean id가 자동지정
+						// 그래서 지금은 "paramController"로 지정됨
+						
+@ResponseBody 			// 이 class의 모든 메소드에 @ResponseBody를 붙여줌
+//@RestController   	// @Controller + @ResponseBody 
+@RequestMapping("human/a") // 주소 앞에 공통으로 적용
+						// 이 주소로 클래스까지 들어옴 (HandlerMapping)
+						// 그리고 나머지 주소고 메소드 찾아감 (HandlerAdaptor)
+public class ParamController {
+	
+	@Autowired 	// 이 타입의 변수에 넣을 수 있는
+			   	// 동일한 클래스나
+				// 자동형변환되는 클래스를 찾아서
+				// 생성하고(IoC)
+				// 변수에 넣어준다(DI)
+	// 만약 후보 클래스가 2개 이상 있다면
+	// @Primary가 붙은 클래스가 온다
+	// @Primary가 없다면 
+	// @Qualifier("bean id") 로 특정 bean을 지정할 수 있다
+//	EmpService empService;
+	
+	@RequestMapping(	// 각 값이 두개 이상인 경우 {}로 묶는다
+		value = {"/test", "/test/{key}"},	// 연결되는 주소
+		method = {RequestMethod.GET, RequestMethod.PUT} // 허용하는 method
+														// 없으면 모두 허용
+	)
+	@ResponseBody // json으로 돌려줌
+	public EmpDTO paramTest(
+		HttpServletRequest request,
+		HttpServletRsonse response
+	)
+	
+	}
+}

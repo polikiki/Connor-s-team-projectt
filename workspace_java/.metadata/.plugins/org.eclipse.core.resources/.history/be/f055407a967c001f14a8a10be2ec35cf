@@ -1,0 +1,6 @@
+package human.class1.rest;
+
+@Controller
+public class ParamController {
+
+}

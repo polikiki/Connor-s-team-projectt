@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="hidden"/>
+		<item key="selection" value="list"/>
 		<list key="findhistory">
+			<item value="list"/>
+			<item value="cmd"/>
 			<item value="hidden"/>
 			<item value="che"/>
 			<item value="chec"/>
@@ -21,15 +23,13 @@
 			<item value="emp."/>
 			<item value="specification"/>
 			<item value="pea"/>
-			<item value="deleteBtn"/>
-			<item value="삭제"/>
 		</list>
 		<list key="replacehistory">
 			<item value="emp.crud"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="919"/>
+		<item key="DIALOG_X_ORIGIN" value="779"/>
 		<item key="DIALOG_Y_ORIGIN" value="305"/>
 		<item key="DIALOG_WIDTH" value="288"/>
 		<item key="DIALOG_HEIGHT" value="391"/>

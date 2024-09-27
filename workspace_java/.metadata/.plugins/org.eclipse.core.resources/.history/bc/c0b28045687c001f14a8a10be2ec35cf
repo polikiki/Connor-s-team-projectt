@@ -1,0 +1,11 @@
+package human.class1.rest;
+
+public class RestController {
+
+	/*
+	 * "/rest/ajax.view" <<<<
+	 * "/rest/ajax" 
+	 * 
+	 */
+	
+}

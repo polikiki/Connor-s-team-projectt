@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+${list[0].empno },${list[0].ename}<br>
+${list[1].empno },${list[1].ename}<br>
+
+<c:forEach var="ltem" items="${list}">
+<li>${item.empno }</li>
+<li>${item.ename }</li>
+<li>${item.ejob }</li>
+<li>${item.sal }</li>
+</c:forEach>
+</body>
+</html>

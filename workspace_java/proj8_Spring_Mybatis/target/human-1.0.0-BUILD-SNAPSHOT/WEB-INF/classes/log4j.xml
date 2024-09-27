@@ -18,11 +18,22 @@
             <param name="ConversionPattern" value="[%-5p]:[%d{yy-MM-dd HH:mm:ss}][%c(%L)] - %m%n"/>
         </layout>
     </appender>
+    
+    <appender name="rolling" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="C:/temp/log/proj8_size.log"/>
+        <param name="Append" value="true"/>
+        <param name="MaxFileSize" value="1KB"/>
+        <param name="MaxBackupIndex" value="10"/> 
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%-5p]:[%d{yy-MM-dd HH:mm:ss}][%c(%L)] - %m%n"/>
+        </layout>
+    </appender>
 	
 	<!-- Application Loggers -->
 	<logger name="kr.or.human">
 		<level value="info" />
 		<appender-ref ref="daily" />
+		<appender-ref ref="rolling" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->

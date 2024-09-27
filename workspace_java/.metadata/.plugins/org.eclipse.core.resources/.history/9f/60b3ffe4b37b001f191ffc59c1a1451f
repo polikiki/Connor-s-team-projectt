@@ -1,0 +1,10 @@
+package kr.or.human.emp.dao;
+
+import java.util.List;
+
+import kr.or.human.emp.dto.EmpDTO;
+
+public interface EmpDAO {
+	List<EmpDTO> selectEmp();
+	EmpDTO selectone();
+}

@@ -1,0 +1,19 @@
+package human.class1.rest;
+
+public class RestController {
+
+	/*
+	 * "/rest/ajax.view" <<<<
+	 * "/rest/ajax" 
+	 * 
+	 */
+	
+	@RequestMapping(value = "/rest/ajax.view", method = { RequestMethod.POST })	
+	public void test(@RequestParam Map<String, Object> map) {
+	 
+		System.out.println((String)map.get("name")); //Object여서 형 변환
+	        System.out.println((String)map.get("age"));
+	        System.out.println((String)map.get("gender"));
+			
+	
+}
