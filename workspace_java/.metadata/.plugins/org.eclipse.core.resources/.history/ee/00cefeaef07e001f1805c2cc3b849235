@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="human.class1.ajax.dao.EmpDAO">
+	<select id="selectEmp" resultType="empDTO">
+		SELECT *FROM emp0 
+	</select>
+	
+	<select id="selectOneEmp" parameterType="int" resultType="empDTO" >
+		SELECT *FROM emp0
+		WHERE empno = #{empno} 
+	</select>
+	
+	<insert id="insertEmp" parameterType="empDTO">
+	INSERT INTO emp0 (
+		empno,
+		ename,
+		hireDate
+	) VALUES(
+		#{empno},
+		#{ename},
+		#{hireDate}
+	)
+	</insert>
+	
+	<update id="updateEmp" parameterType="empDTO">
+		
+		UPDATE emp0 SET 
+			ename = #{ename},
+			hireDate = #{hireDate}
+		WHERE
+			empno = #{empno}
+	</update>
+	
+	<delete id="deleteEmp" parameterType="empDTO">
+		DELETE FROM emp0 
+		WHERE empno = #{empno}
+	</delete>
+</mapper>

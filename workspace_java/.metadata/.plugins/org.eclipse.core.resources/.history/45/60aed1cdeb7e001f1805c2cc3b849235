@@ -1,0 +1,14 @@
+package human.class1.ajax.service;
+
+import java.util.List;
+
+importhuman.class1.ajax.dto.EmpDTO;
+
+public interface EmpService {
+
+	List<EmpDTO> listEmp();
+	EmpDTO detailEmp(int empno);
+	int joinEmp(EmpDTO empDTO);
+	int deleteEmp(EmpDTO empDTO);
+	int modifyEmp(EmpDTO empDTO);
+}

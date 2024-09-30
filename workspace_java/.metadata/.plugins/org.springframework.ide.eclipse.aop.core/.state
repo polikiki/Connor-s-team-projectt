@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="proj9_REST"/>
 <aop-project name="proj8_Spring_Mybatis"/>
 <aop-project name="proj7_spring"/>
+<aop-project name="proj11_ajax"/>
+<aop-project name="proj10_tilies"/>
 </aop-reference-model>
