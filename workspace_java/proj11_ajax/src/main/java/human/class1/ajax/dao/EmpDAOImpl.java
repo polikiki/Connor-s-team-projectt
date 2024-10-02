@@ -20,4 +20,10 @@ public class EmpDAOImpl implements EmpDAO {
 		return result;
 	}
 	
+	@Override
+	public int deleteEmp(EmpDTO empDTO) {
+		int result = sqlSession.delete("mapper.emp.deleteEmp",empDTO);
+		return result;
+	}
+	
 }
