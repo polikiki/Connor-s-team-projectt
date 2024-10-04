@@ -26,4 +26,10 @@ public class EmpDAOImpl implements EmpDAO {
 		return result;
 	}
 	
+	@Override
+	public int insertEmp(EmpDTO empDTO) {
+		int result = sqlSession.insert("mapper.emp.insertEmp",empDTO);
+		return result;
+	}
+	
 }

@@ -8,4 +8,5 @@ public interface EmpService {
 
 	List<EmpDTO> listEmp();
 	int deleteEmp(EmpDTO empDTO);
+	int joinEmp(EmpDTO empDTO);
 }

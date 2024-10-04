@@ -6,8 +6,14 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="empDTO"/>
+		<item key="selection" value="hire"/>
 		<list key="findhistory">
+			<item value="hire"/>
+			<item value="btn"/>
+			<item value="result"/>
+			<item value="delete"/>
+			<item value="ajax"/>
+			<item value="junit"/>
 			<item value="empDTO"/>
 			<item value="emp"/>
 			<item value="form"/>
@@ -17,20 +23,14 @@
 			<item value="che"/>
 			<item value="chec"/>
 			<item value="check"/>
-			<item value="ch"/>
-			<item value="foreach"/>
-			<item value="from"/>
-			<item value="delete"/>
-			<item value="de"/>
-			<item value="emp."/>
 		</list>
 		<list key="replacehistory">
 			<item value="emp.crud"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="852"/>
-		<item key="DIALOG_Y_ORIGIN" value="346"/>
+		<item key="DIALOG_X_ORIGIN" value="149"/>
+		<item key="DIALOG_Y_ORIGIN" value="162"/>
 		<item key="DIALOG_WIDTH" value="288"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

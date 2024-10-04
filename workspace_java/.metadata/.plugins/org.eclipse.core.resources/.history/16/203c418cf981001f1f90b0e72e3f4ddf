@@ -1,0 +1,21 @@
+package human.class1.file;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class FileController {
+
+		@RequestMapping("uploadForm")
+		public String uploadForm() {
+			return "uplaodForm";
+		}
+		
+		@RequestMapping("upload")
+		public String upload( MultipartHttpServletRequest) {
+			
+			
+			
+			return "uplaodForm";
+		}
+}

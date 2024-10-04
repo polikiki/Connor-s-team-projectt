@@ -15,7 +15,7 @@
 	<nav>emp > 회원 목록</nav>
 </header>
 <main>
-	<a href="member?cmd=join">회원가입</a>
+	<a href="join">회원가입</a>
 	<section>
 		<article>
 			<form id="frm" method="get" action="member">
@@ -44,8 +44,12 @@
 
 <script>
 
+	window.addEventListener("load", function(){
+		getList()
+	})
+
 	// cb : callback 
-	function ajax(url, param, method, cb){
+	function ajax(url, param, cb, method){
 		// javascript에서 false의 의미는 null, undefined, 0 
 		// true는 false가 아닌것
 		if(!method) method = "get";
@@ -76,7 +80,7 @@
 				html = "<tr><td colspan='7'>자료가 없습니다</td></tr>"
 			} else {
 				for(let i=0; i<empList.length; i++){
-					
+					console.log(empList[i])
 					const hiredate = new Date(empList[i].hireDate)
 					const y = hiredate.getFullYear()
 					let m = hiredate.getMonth() + 1
@@ -133,7 +137,7 @@
 				const data = {
 						"empno": empno
 				}
-				ajax("deleteEmp", data, function(result)){
+				ajax("deleteEmp", data, function(result){
 					if(result != 0){
 						getList()
 					} else {
@@ -143,9 +147,11 @@
 				
 			})
 		}
+			
+			
 	}
 
-	
+/*
 	window.addEventListener("load",function(){
 		
 		
@@ -249,6 +255,7 @@
 		}
 		
 	})
+*/
 </script>
 
 </body>

@@ -30,4 +30,12 @@ public class EmpServiceImpl implements EmpService {
 		return result;
 	}
 	
+	@Override
+	public int joinEmp(EmpDTO empDTO) {
+		
+		int result = empDAO.insertEmp(empDTO);
+		
+		return result;
+	}
+	
 }

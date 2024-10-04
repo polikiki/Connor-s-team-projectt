@@ -1,0 +1,21 @@
+package kr.or.human.emp.dao;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import kr.or.human.emp.dto.EmpDTO;
+
+public class EmpDAOImplTest {
+
+	@Autowired
+	SqlSession sqlSession;
+	
+	@Test
+	public void testSelectOneEmp() {
+//		fail("Not yet implemented");
+		EmpDTO empDTO = null;
+		empDTO = sqlSession.selectOne("mapper.emp.selectOneEmp",empno);
+	}
+
+}

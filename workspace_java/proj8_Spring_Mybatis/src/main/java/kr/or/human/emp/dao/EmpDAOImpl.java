@@ -22,7 +22,7 @@ public class EmpDAOImpl implements EmpDAO {
 	
 	@Override
 	public EmpDTO selectOneEmp(int empno) {
-		EmpDTO empDTO = sqlSession.selectOne("mapper.emp.selectOneEmp");
+		EmpDTO empDTO = sqlSession.selectOne("mapper.emp.selectOneEmp",empno);
 		return empDTO;
 	}
 	

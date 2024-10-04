@@ -1,0 +1,14 @@
+package kr.or.human.emp.dao;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class EmpDAOImplTest {
+
+	@Test
+	public void testSelectOneEmp() {
+		fail("Not yet implemented");
+	}
+
+}
